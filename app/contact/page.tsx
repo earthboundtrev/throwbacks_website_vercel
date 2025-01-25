@@ -1,0 +1,129 @@
+"use client"
+
+import { useState } from "react"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Button } from "@/components/ui/button"
+import { MapPin, Phone, Mail } from "lucide-react"
+
+export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  })
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }))
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    // Here you would typically send the form data to your server
+    console.log("Form submitted:", formData)
+    // Reset form after submission
+    setFormData({ name: "", email: "", message: "" })
+  }
+
+  return (
+    <div className="container mx-auto py-16">
+      <h1 className="text-4xl font-bold text-center mb-12 neon-text">Contact Us</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <Card className="bg-card text-card-foreground neon-border pixel-corners">
+          <CardHeader>
+            <CardTitle className="text-2xl mb-2 text-primary">Get in Touch</CardTitle>
+            <CardDescription className="text-muted-foreground">We'd love to hear from you!</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handleSubmit}>
+              <div className="mb-4">
+                <label htmlFor="name" className="block text-sm font-medium text-muted-foreground mb-1">
+                  Name
+                </label>
+                <Input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-muted text-foreground"
+                />
+              </div>
+              <div className="mb-4">
+                <label htmlFor="email" className="block text-sm font-medium text-muted-foreground mb-1">
+                  Email
+                </label>
+                <Input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-muted text-foreground"
+                />
+              </div>
+              <div className="mb-4">
+                <label htmlFor="message" className="block text-sm font-medium text-muted-foreground mb-1">
+                  Message
+                </label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-muted text-foreground"
+                  rows={4}
+                />
+              </div>
+              <Button type="submit" className="w-full bg-secondary hover:bg-secondary/80 text-white">
+                Send Message
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
+        <Card className="bg-card text-card-foreground neon-border pixel-corners">
+          <CardHeader>
+            <CardTitle className="text-2xl mb-2 text-primary">Visit Us</CardTitle>
+            <CardDescription className="text-muted-foreground">
+              Come experience the nostalgia in person!
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div className="flex items-center">
+                <MapPin className="h-5 w-5 mr-2 text-secondary" />
+                <p className="text-muted-foreground">123 Retro Lane, Pixelville, PX 12345</p>
+              </div>
+              <div className="flex items-center">
+                <Phone className="h-5 w-5 mr-2 text-secondary" />
+                <p className="text-muted-foreground">(555) 123-4567</p>
+              </div>
+              <div className="flex items-center">
+                <Mail className="h-5 w-5 mr-2 text-secondary" />
+                <p className="text-muted-foreground">info@throwbacksarcade.com</p>
+              </div>
+            </div>
+            <div className="mt-6">
+              <h3 className="text-xl font-bold mb-2 text-primary">Opening Hours</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li>Monday - Thursday: 2:00 PM - 10:00 PM</li>
+                <li>Friday: 2:00 PM - 12:00 AM</li>
+                <li>Saturday: 12:00 PM - 12:00 AM</li>
+                <li>Sunday: 12:00 PM - 9:00 PM</li>
+              </ul>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  )
+}
+
