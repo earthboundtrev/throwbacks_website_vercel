@@ -9,7 +9,7 @@ import Image from "next/image"
 const NeonSign = () => (
   <Link href="/" className="flex items-center space-x-2">
     <Image
-      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/437947549_122142302060209347_1362648001893593001_n.jpg-5uY6ZzpUDRX1NUGkTSPfiSjZZNDTcm.jpeg"
+      src="https://pub-ffac2d7c13df4c70bc02719f375f929c.r2.dev/throwbacks_logo_larger.jpg"
       alt="Throwbacks Logo"
       width={200}
       height={80}
