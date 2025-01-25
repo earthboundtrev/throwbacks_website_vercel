@@ -100,7 +100,7 @@ export default function ContactPage() {
             <div className="space-y-4">
               <div className="flex items-center">
                 <MapPin className="h-5 w-5 mr-2 text-secondary" />
-                <p className="text-muted-foreground">123 Retro Lane, Pixelville, PX 12345</p>
+                <p className="text-muted-foreground">201 S. East St, Culpeper, VA, 22701</p>
               </div>
               <div className="flex items-center">
                 <Phone className="h-5 w-5 mr-2 text-secondary" />
@@ -114,10 +114,11 @@ export default function ContactPage() {
             <div className="mt-6">
               <h3 className="text-xl font-bold mb-2 text-primary">Opening Hours</h3>
               <ul className="space-y-2 text-muted-foreground">
-                <li>Monday - Thursday: 2:00 PM - 10:00 PM</li>
-                <li>Friday: 2:00 PM - 12:00 AM</li>
-                <li>Saturday: 12:00 PM - 12:00 AM</li>
-                <li>Sunday: 12:00 PM - 9:00 PM</li>
+                <li>Monday - Tuesday: Closed</li>
+                <li>Wednesday - Thursday: 5:00 PM - 9:00 PM</li>
+                <li>Friday: 5:00 PM - 11:00 PM</li>
+                <li>Saturday: 12:00 PM - 11:00 PM</li>
+                <li>Sunday: 12:00 PM - 6:00 PM</li>
               </ul>
             </div>
           </CardContent>
