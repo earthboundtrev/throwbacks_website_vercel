@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { FaFacebook } from 'react-icons/fa'
+import { FaFacebook, FaGamepad } from 'react-icons/fa'
 
 export default function Footer() {
   return (
@@ -21,6 +21,15 @@ export default function Footer() {
               >
                 <FaFacebook className="w-5 h-5" />
                 <span>Facebook</span>
+              </a>
+              <a 
+                href="http://www.vacoinop.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm hover:text-primary flex items-center space-x-2 mt-2"
+              >
+                <FaGamepad className="w-5 h-5" />
+                <span>Virginia Coin-Op</span>
               </a>
             </div>
           </div>
