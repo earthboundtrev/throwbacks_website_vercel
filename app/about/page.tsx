@@ -31,7 +31,7 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold mb-4 text-primary">Our Story</h2>
           <p className="mb-4 text-muted-foreground">
             Throwbacks Arcade was born from a passion for 80s gaming culture and a desire to preserve the magic of
-            classic arcade games. Founded in 2010, we've created a space where gamers of all ages can experience the
+            classic arcade games. Founded in 2024, we've created a space where gamers of all ages can experience the
             golden age of arcades, complete with authentic cabinets, neon lights, and the unmistakable sounds of 8-bit
             adventures.
           </p>
@@ -42,7 +42,8 @@ export default function AboutPage() {
           </p>
           <p className="text-muted-foreground">
             At Throwbacks Arcade, we're not just about playing games – we're about creating memories, fostering a
-            community, and keeping the spirit of the 80s arcade scene alive in the modern world.
+            community, and keeping the spirit of the 80s arcade scene alive in the modern world. Our collection of pinball
+            machines also helps recreate the 80s feel.
           </p>
         </div>
         <div className="flex justify-center items-center">
