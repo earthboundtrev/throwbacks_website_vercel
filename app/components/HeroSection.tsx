@@ -36,7 +36,9 @@ export default function HeroSection() {
     <section className="relative py-20 bg-gradient-to-b from-background to-[#FF6B00]/10 overflow-hidden">
       <BackgroundImage />
       <div className="container relative z-10">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">Welcome to Throwbacks Arcade</h1>
+        <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          Welcome to<br className="md:hidden" /> Throwbacks Arcade
+        </h1>
         <p className="text-xl mb-8">Step back in time to the golden age of gaming</p>
         <Link href="/games">
           <Button 
