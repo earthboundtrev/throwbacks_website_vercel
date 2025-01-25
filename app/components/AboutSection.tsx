@@ -8,25 +8,28 @@ export default function AboutSection() {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="space-y-4">
             <p className="text-lg">
-              Welcome to our company! We are passionate about delivering innovative solutions
-              that make a difference in people's lives.
+              Welcome to Throwbacks Arcade! Step into a time machine where the golden age of 
+              gaming comes alive with the familiar beeps, boops, and flashing lights of 
+              classic arcade cabinets.
             </p>
             <p>
-              Founded in 2024, we've been at the forefront of technology, combining creativity
-              with technical excellence to solve complex challenges.
+              Established in 2024 in the heart of our community, we're bringing the magic 
+              of 80s arcade culture to rural life. Our carefully curated collection of 
+              authentic arcade games and pinball machines creates the perfect blend of 
+              nostalgia and fun.
             </p>
           </div>
           <div className="space-y-4">
             <h3 className="text-xl font-semibold">Our Mission</h3>
             <p>
-              To provide cutting-edge solutions while maintaining the highest standards of
-              quality and customer satisfaction.
+              To create an authentic retro gaming experience that brings our community 
+              together through the timeless joy of arcade games.
             </p>
             <ul className="list-disc list-inside space-y-2">
-              <li>Innovation-driven development</li>
-              <li>Customer-centric approach</li>
-              <li>Sustainable practices</li>
-              <li>Continuous improvement</li>
+              <li>Preserve classic arcade culture</li>
+              <li>Create lasting memories</li>
+              <li>Build community connections</li>
+              <li>Share the magic of retro gaming</li>
             </ul>
           </div>
         </div>
