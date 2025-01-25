@@ -40,17 +40,28 @@ export default function HeroSection() {
           Welcome to<br className="md:hidden" /> Throwbacks Arcade
         </h1>
         <p className="text-xl mb-8">Step back in time to the golden age of gaming</p>
-        <Link href="/games">
-          <Button 
-            className="text-2xl py-6 px-8 bg-primary hover:bg-primary/80 text-white font-bold rounded-full shadow-lg transform transition hover:scale-105 pixel-corners"
-            onClick={() => {
-              // Ensure scroll to top when reaching the games page
-              window.scrollTo(0, 0)
-            }}
-          >
-            Explore the Arcade
-          </Button>
-        </Link>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <Link href="/games">
+            <Button 
+              className="text-2xl py-6 px-8 bg-primary hover:bg-primary/80 text-white font-bold rounded-full shadow-lg transform transition hover:scale-105 pixel-corners w-full sm:w-auto"
+              onClick={() => {
+                window.scrollTo(0, 0)
+              }}
+            >
+              Explore the Arcade
+            </Button>
+          </Link>
+          <Link href="/menu">
+            <Button 
+              className="text-2xl py-6 px-8 bg-primary hover:bg-primary/80 text-white font-bold rounded-full shadow-lg transform transition hover:scale-105 pixel-corners w-full sm:w-auto"
+              onClick={() => {
+                window.scrollTo(0, 0)
+              }}
+            >
+              View Our Menu
+            </Button>
+          </Link>
+        </div>
       </div>
     </section>
   )

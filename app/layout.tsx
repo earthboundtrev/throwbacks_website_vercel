@@ -12,6 +12,21 @@ export const metadata: Metadata = {
   title: "Throwbacks Arcade - Step Back in Time to the Golden Age of Gaming",
   description:
     "Experience the nostalgia of 80s gaming at Throwbacks Arcade. Play classic games, join events, and relive the golden age of arcades.",
+  icons: {
+    icon: [
+      {
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/437947549_122142302060209347_1362648001893593001_n.jpg-5uY6ZzpUDRX1NUGkTSPfiSjZZNDTcm.jpeg",
+        href: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/437947549_122142302060209347_1362648001893593001_n.jpg-5uY6ZzpUDRX1NUGkTSPfiSjZZNDTcm.jpeg",
+      },
+    ],
+    apple: [
+      {
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/437947549_122142302060209347_1362648001893593001_n.jpg-5uY6ZzpUDRX1NUGkTSPfiSjZZNDTcm.jpeg",
+        sizes: "180x180",
+        type: "image/jpeg",
+      },
+    ],
+  },
 }
 
 export default function RootLayout({
