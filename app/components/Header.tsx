@@ -34,6 +34,7 @@ export default function Header() {
         <nav className="hidden md:flex space-x-6">
           <NavItem href="/">Home</NavItem>
           <NavItem href="/games">Games</NavItem>
+          <NavItem href="/menu">Menu</NavItem>
           <NavItem href="/events">Events</NavItem>
           <NavItem href="/about">About</NavItem>
           <NavItem href="/contact">Contact</NavItem>
@@ -46,6 +47,7 @@ export default function Header() {
         <nav className="md:hidden mt-4 flex flex-col space-y-4">
           <NavItem href="/">Home</NavItem>
           <NavItem href="/games">Games</NavItem>
+          <NavItem href="/menu">Menu</NavItem>
           <NavItem href="/events">Events</NavItem>
           <NavItem href="/about">About</NavItem>
           <NavItem href="/contact">Contact</NavItem>

@@ -1,37 +1,29 @@
-import Link from "next/link"
-import { Facebook, Twitter, Instagram, MapPin } from "lucide-react"
+import React from 'react'
+import Link from 'next/link'
+import { FaFacebook } from 'react-icons/fa'
 
 export default function Footer() {
   return (
-    <footer className="bg-background text-foreground py-12 neon-border">
-      <div className="container mx-auto px-4">
+    <footer className="bg-background p-6 border-t">
+      <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-6 md:mb-0">
-            <h3 className="text-2xl font-bold mb-2 text-primary">Throwbacks Arcade</h3>
-            <p className="text-muted-foreground">123 Retro Lane, Pixelville, PX 12345</p>
-            <div className="flex items-center mt-2">
-              <MapPin className="h-5 w-5 mr-2 text-secondary" />
-              <Link href="#" className="text-accent hover:text-accent/80">
-                View on Map
-              </Link>
+          <div className="mb-4 md:mb-0">
+            <p className="text-sm">© 2025 Throwbacks Arcade. All rights reserved.</p>
+          </div>
+          <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
+            <div className="flex flex-col items-center md:items-start">
+              <h3 className="text-sm font-semibold mb-2">Quick Links</h3>
+              <a 
+                href="https://www.facebook.com/profile.php?id=61556280427238"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm hover:text-primary flex items-center space-x-2"
+              >
+                <FaFacebook className="w-5 h-5" />
+                <span>Facebook</span>
+              </a>
             </div>
           </div>
-          <div className="flex space-x-4">
-            <Link href="#" className="text-muted-foreground hover:text-primary">
-              <Facebook className="h-6 w-6" />
-            </Link>
-            <Link href="#" className="text-muted-foreground hover:text-primary">
-              <Twitter className="h-6 w-6" />
-            </Link>
-            <Link href="#" className="text-muted-foreground hover:text-primary">
-              <Instagram className="h-6 w-6" />
-            </Link>
-          </div>
-        </div>
-        <div className="mt-8 text-center">
-          <p className="text-muted-foreground">
-            &copy; {new Date().getFullYear()} Throwbacks Arcade. All rights reserved.
-          </p>
         </div>
       </div>
     </footer>

@@ -1,6 +1,8 @@
-import type { Metadata } from "next"
+import "@/app/globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
+import { cn } from "@/lib/utils"
 import { Inter } from "next/font/google"
-import "./globals.css"
+import type { Metadata } from "next"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 
@@ -18,11 +20,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} min-h-screen bg-black text-white`}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+    <html lang="en" suppressHydrationWarning>
+      <head />
+      <body className={cn("min-h-screen bg-background font-sans antialiased", inter.className)}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   )

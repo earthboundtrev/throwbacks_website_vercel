@@ -4,49 +4,51 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: 0 0% 0%;
-  --foreground: 0 0% 100%;
-  --card: 0 0% 3%;
-  --card-foreground: 0 0% 100%;
-  --popover: 0 0% 3%;
-  --popover-foreground: 0 0% 100%;
-  --primary: 24 100% 50%; /* Orange from logo */
-  --primary-foreground: 0 0% 100%;
-  --secondary: 32 100% 50%; /* Complementary warm yellow */
-  --secondary-foreground: 0 0% 100%;
-  --muted: 0 0% 20%;
-  --muted-foreground: 0 0% 80%;
-  --accent: 200 100% 60%; /* Cool blue for contrast */
-  --accent-foreground: 0 0% 0%;
-  --destructive: 0 100% 50%;
-  --destructive-foreground: 0 0% 100%;
-  --border: 24 100% 20%;
-  --input: 0 0% 20%;
-  --ring: 24 100% 50%;
-  --radius: 0.5rem;
-}
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 24 100% 50%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 24 100% 50%;
+    --radius: 0.5rem;
+  }
 
-.dark {
-  --background: 0 0% 0%;
-  --foreground: 0 0% 100%;
-  --card: 0 0% 3%;
-  --card-foreground: 0 0% 100%;
-  --popover: 0 0% 3%;
-  --popover-foreground: 0 0% 100%;
-  --primary: 24 100% 50%;
-  --primary-foreground: 0 0% 100%;
-  --secondary: 32 100% 50%;
-  --secondary-foreground: 0 0% 100%;
-  --muted: 0 0% 20%;
-  --muted-foreground: 0 0% 80%;
-  --accent: 200 100% 60%;
-  --accent-foreground: 0 0% 0%;
-  --destructive: 0 100% 50%;
-  --destructive-foreground: 0 0% 100%;
-  --border: 24 100% 20%;
-  --input: 0 0% 20%;
-  --ring: 24 100% 50%;
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 24 100% 50%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 24 100% 50%;
+  }
 }
 
 @layer base {
@@ -68,13 +70,11 @@
 }
 
 .neon-text {
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff6b00, 0 0 35px #ff6b00, 0 0 40px #ff6b00, 0 0
-    50px #ff6b00, 0 0 75px #ff6b00;
+  text-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
 }
 
 .neon-border {
-  box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff6b00, 0 0 35px #ff6b00, 0 0 40px #ff6b00, 0 0 50px
-    #ff6b00, 0 0 75px #ff6b00;
+  box-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
 }
 
 .pixel-corners {
@@ -95,10 +95,8 @@
 }
 
 .logo-gradient {
-  background: linear-gradient(180deg, #ff6b00 0%, #ff4400 100%);
+  background: linear-gradient(to right, #FF6B00, #FF8533);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
 }
 

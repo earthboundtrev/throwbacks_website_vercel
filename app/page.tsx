@@ -1,16 +1,16 @@
-import HeroSection from "./components/HeroSection"
-import GamesSection from "./components/GamesSection"
-import { AboutSection } from "./components/AboutSection"
-import EventsSection from "./components/EventsSection"
+import AboutSection from "@/app/components/AboutSection"
+import EventsSection from "@/app/components/EventsSection"
+import GamesSection from "@/app/components/GamesSection"
+import HeroSection from "@/app/components/HeroSection"
 
 export default function Home() {
   return (
-    <div className="bg-background text-foreground">
+    <main>
       <HeroSection />
-      <GamesSection />
       <AboutSection />
+      <GamesSection />
       <EventsSection />
-    </div>
+    </main>
   )
 }
 

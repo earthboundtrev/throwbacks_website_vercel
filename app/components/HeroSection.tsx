@@ -1,7 +1,9 @@
 "use client"
 
+import React from 'react'
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
+import Link from 'next/link'
 
 const PixelArt = () => (
   <div className="absolute inset-0 z-0 opacity-20">
@@ -31,13 +33,21 @@ export default function HeroSection() {
   }, [glitchText])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <PixelArt />
-      <div className="container mx-auto text-center z-10">
-        <h2 className="text-4xl md:text-6xl font-bold mb-8 neon-text logo-gradient">{glitchText}</h2>
-        <Button className="text-2xl py-6 px-8 bg-primary hover:bg-primary/80 text-white font-bold rounded-full shadow-lg transform transition hover:scale-105 pixel-corners">
-          Explore the Arcade
-        </Button>
+    <section className="py-20 bg-gradient-to-b from-background to-[#FF6B00]/10">
+      <div className="container">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6">Welcome to Throwbacks Arcade</h1>
+        <p className="text-xl mb-8">Step back in time to the golden age of gaming</p>
+        <Link href="/games">
+          <Button 
+            className="text-2xl py-6 px-8 bg-primary hover:bg-primary/80 text-white font-bold rounded-full shadow-lg transform transition hover:scale-105 pixel-corners"
+            onClick={() => {
+              // Ensure scroll to top when reaching the games page
+              window.scrollTo(0, 0)
+            }}
+          >
+            Explore the Arcade
+          </Button>
+        </Link>
       </div>
     </section>
   )
