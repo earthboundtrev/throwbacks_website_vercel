@@ -39,7 +39,7 @@ export default function HeroSection() {
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
           Welcome to<br className="md:hidden" /> Throwbacks Arcade
         </h1>
-        <p className="text-xl mb-8">Step back in time to the golden age of gaming</p>
+        <p className="text-xl mb-8">Step back in time to the golden age of gaming!</p>
         <div className="flex flex-col sm:flex-row gap-4">
           <Link href="/games">
             <Button 
