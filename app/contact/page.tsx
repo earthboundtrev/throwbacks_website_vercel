@@ -104,7 +104,7 @@ export default function ContactPage() {
               </div>
               <div className="flex items-center">
                 <Phone className="h-5 w-5 mr-2 text-secondary" />
-                <p className="text-muted-foreground">(555) 123-4567</p>
+                <p className="text-muted-foreground">+17038634171</p>
               </div>
               <div className="flex items-center">
                 <Mail className="h-5 w-5 mr-2 text-secondary" />
