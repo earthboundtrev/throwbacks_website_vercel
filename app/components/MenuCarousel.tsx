@@ -1,14 +1,19 @@
 "use client"
 
+import { Suspense } from 'react'
 import dynamic from 'next/dynamic'
 import { type CarouselProps } from '@/components/ui/carousel'
 
 const Carousel = dynamic(() => import('@/components/ui/carousel'), {
   ssr: false,
-  loading: () => (
-    <div className="w-full aspect-[1000/667] bg-muted animate-pulse rounded-lg" />
-  ),
+  loading: () => <LoadingPlaceholder />,
 })
+
+function LoadingPlaceholder() {
+  return (
+    <div className="w-full aspect-[1000/667] bg-muted animate-pulse rounded-lg" />
+  )
+}
 
 interface MenuCarouselProps {
   images: {
@@ -20,7 +25,9 @@ interface MenuCarouselProps {
 export default function MenuCarousel({ images }: MenuCarouselProps) {
   return (
     <div className="container mx-auto py-8">
-      <Carousel images={images} />
+      <Suspense fallback={<LoadingPlaceholder />}>
+        <Carousel images={images} />
+      </Suspense>
     </div>
   )
 } 

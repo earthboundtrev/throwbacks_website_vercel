@@ -1,5 +1,6 @@
 import ArcadeMenu from '../components/ArcadeMenu'
 import MenuCarousel from '../components/MenuCarousel'
+import { Suspense } from 'react'
 
 const menuImages = [
   {
@@ -41,7 +42,9 @@ export default function MenuPage() {
   return (
     <div>
       <ArcadeMenu />
-      <MenuCarousel images={menuImages} />
+      <Suspense fallback={<div className="h-[667px] bg-muted" />}>
+        <MenuCarousel images={menuImages} />
+      </Suspense>
     </div>
   )
 } 
