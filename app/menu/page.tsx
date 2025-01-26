@@ -41,7 +41,7 @@ export default function MenuPage() {
   return (
     <div>
       <ArcadeMenu />
-      <MenuCarousel images={menuImages} />
+      {/* <MenuCarousel images={menuImages} /> */}
     </div>
   )
 } 
