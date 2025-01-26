@@ -40,24 +40,6 @@ const events = [
       "$300 for 2 hours for 20 guests. Each additional guest $10. Includes 1 free soda and popcorn per person. Bring your own cake/cupcakes or order from our menu. Guests can stay after during regular hours.",
     image: "https://pub-ffac2d7c13df4c70bc02719f375f929c.r2.dev/birthday_parties.jpg",
     isRegular: true,
-  },
-  {
-    title: "Open Business Hours Parties",
-    date: "During Regular Hours",
-    time: "Flexible Duration",
-    description:
-      "Minimum of 10 guests at $10.00 per person. Perfect for smaller groups! You may bring cake/cupcakes, but no outside food permitted. Enjoy all our arcade games during regular business hours.",
-    image: "/events/business-hours-party.jpg",
-    isRegular: true,
-  },
-  {
-    title: "Office & Holiday Parties",
-    date: "Available Upon Request",
-    time: "Custom Scheduling",
-    description:
-      "Book your next office party or holiday celebration with us! Custom packages available to suit your group's needs. Contact us at ThrowbacksCulpeper@Gmail.com to set up dates and times.",
-    image: "/events/office-party.jpg",
-    isRegular: false,
   }
 ]
 

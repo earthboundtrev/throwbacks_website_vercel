@@ -36,8 +36,8 @@ export default function Header() {
           <NavItem href="/games">Games</NavItem>
           <NavItem href="/menu">Menu</NavItem>
           <NavItem href="/events">Events</NavItem>
-          <NavItem href="/about">About</NavItem>
-          <NavItem href="/contact">Contact</NavItem>
+          {/* <NavItem href="/about">About</NavItem> */}
+          {/* <NavItem href="/contact">Contact</NavItem> */}
         </nav>
         <Button variant="outline" size="icon" className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <Menu className="h-6 w-6" />
@@ -49,8 +49,8 @@ export default function Header() {
           <NavItem href="/games">Games</NavItem>
           <NavItem href="/menu">Menu</NavItem>
           <NavItem href="/events">Events</NavItem>
-          <NavItem href="/about">About</NavItem>
-          <NavItem href="/contact">Contact</NavItem>
+          {/* <NavItem href="/about">About</NavItem> */}
+          {/* <NavItem href="/contact">Contact</NavItem> */}
         </nav>
       )}
     </header>
