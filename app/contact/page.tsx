@@ -111,6 +111,18 @@ export default function ContactPage() {
                 <p className="text-muted-foreground">info@throwbacksarcade.com</p>
               </div>
             </div>
+            <div className="mt-4 h-[300px] w-full">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3132.8876671466387!2d-77.99729892367893!3d38.47216127945371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b427964fc89f83%3A0x7d8c5900b6797a83!2sThrowbacks!5e0!3m2!1sen!2sus!4v1706115436044!5m2!1sen!2sus"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="rounded-lg"
+              ></iframe>
+            </div>
             <div className="mt-6">
               <h3 className="text-xl font-bold mb-2 text-primary">Opening Hours</h3>
               <ul className="space-y-2 text-muted-foreground">

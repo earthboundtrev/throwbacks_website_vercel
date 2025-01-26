@@ -94,9 +94,6 @@ export default function EventsPage() {
                 <CardDescription className="text-muted-foreground mb-4">{event.time}</CardDescription>
                 <p className="text-muted-foreground">{event.description}</p>
               </CardContent>
-              <CardFooter>
-                <Button className="w-full bg-secondary hover:bg-secondary/80 text-white">Book Now</Button>
-              </CardFooter>
             </Card>
           ))}
       </div>
@@ -126,9 +123,6 @@ export default function EventsPage() {
                 <CardDescription className="text-muted-foreground mb-4">{event.time}</CardDescription>
                 <p className="text-muted-foreground">{event.description}</p>
               </CardContent>
-              <CardFooter>
-                <Button className="w-full bg-secondary hover:bg-secondary/80 text-white">Inquire Now</Button>
-              </CardFooter>
             </Card>
           ))}
       </div>
