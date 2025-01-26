@@ -1,5 +1,5 @@
 import ArcadeMenu from '../components/ArcadeMenu'
-import Carousel from '@/components/ui/carousel'
+import MenuCarousel from '../components/MenuCarousel'
 
 const menuImages = [
   {
@@ -41,9 +41,7 @@ export default function MenuPage() {
   return (
     <div>
       <ArcadeMenu />
-      <div className="container mx-auto py-8">
-        <Carousel images={menuImages} />
-      </div>
+      <MenuCarousel images={menuImages} />
     </div>
   )
 } 
