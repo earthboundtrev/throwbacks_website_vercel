@@ -16,13 +16,13 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/437947549_122142302060209347_1362648001893593001_n.jpg-5uY6ZzpUDRX1NUGkTSPfiSjZZNDTcm.jpeg",
-        href: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/437947549_122142302060209347_1362648001893593001_n.jpg-5uY6ZzpUDRX1NUGkTSPfiSjZZNDTcm.jpeg",
+        url: "https://pub-ffac2d7c13df4c70bc02719f375f929c.r2.dev/throwbacks_logo_larger.jpg",
+        href: "https://pub-ffac2d7c13df4c70bc02719f375f929c.r2.dev/throwbacks_logo_larger.jpg",
       },
     ],
     apple: [
       {
-        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/437947549_122142302060209347_1362648001893593001_n.jpg-5uY6ZzpUDRX1NUGkTSPfiSjZZNDTcm.jpeg",
+        url: "https://pub-ffac2d7c13df4c70bc02719f375f929c.r2.dev/throwbacks_logo_larger.jpg",
         sizes: "180x180",
         type: "image/jpeg",
       },
