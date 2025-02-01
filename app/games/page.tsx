@@ -280,6 +280,10 @@ export default function GamesPage() {
     }
   }
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <div className="container mx-auto py-16">
       <h1 className="text-4xl font-bold text-center mb-8 neon-text">Our Arcade Collection</h1>
@@ -346,6 +350,16 @@ export default function GamesPage() {
           </div>
         </div>
 
+        {/* Mid-page Back to Top Button */}
+        <div className="text-center pt-8">
+          <button
+            onClick={scrollToTop}
+            className="px-6 py-3 text-lg font-semibold neon-border pixel-corners bg-[#2A0E61] hover:bg-[#3A1661] text-white transition-colors duration-200"
+          >
+            Back to Top
+          </button>
+        </div>
+
         {/* Pinball Section */}
         <div className="flex flex-col lg:flex-row gap-8" id="pinball-section">
           <div className="lg:w-1/3">
@@ -389,6 +403,16 @@ export default function GamesPage() {
               </Card>
             )}
           </div>
+        </div>
+
+        {/* Bottom Back to Top Button */}
+        <div className="text-center pt-8">
+          <button
+            onClick={scrollToTop}
+            className="px-6 py-3 text-lg font-semibold neon-border pixel-corners bg-[#2A0E61] hover:bg-[#3A1661] text-white transition-colors duration-200"
+          >
+            Back to Top
+          </button>
         </div>
       </div>
     </div>

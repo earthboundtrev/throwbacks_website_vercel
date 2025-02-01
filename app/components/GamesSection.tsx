@@ -9,7 +9,7 @@ export default function GamesSection() {
   return (
     <section id="games" className="py-16 bg-gradient-to-b from-[#FF6B00]/10 to-background">
       <div className="container">
-        <h2 className="text-3xl font-bold mb-8 font-['Press_Start_2P']">Our Games</h2>
+        <h2 className="text-3xl font-bold mb-8 font-['Press_Start_2P']">Join our text club!</h2>
         
         <div className="flex justify-center">
           <div 
@@ -17,7 +17,7 @@ export default function GamesSection() {
             onClick={() => setIsImageOpen(true)}
           >
             <Image
-              src="https://pub-ffac2d7c13df4c70bc02719f375f929c.r2.dev/faraway_picture_of_games.jpg"
+              src="https://pub-ffac2d7c13df4c70bc02719f375f929c.r2.dev/join_our_text_club.jpg"
               alt="Faraway Games"
               width={800}
               height={450}
@@ -33,8 +33,8 @@ export default function GamesSection() {
           >
             <div className="max-w-[90vw] max-h-[90vh]">
               <Image
-                src="https://pub-ffac2d7c13df4c70bc02719f375f929c.r2.dev/faraway_picture_of_games.jpg"
-                alt="Faraway Games"
+                src="https://pub-ffac2d7c13df4c70bc02719f375f929c.r2.dev/join_our_text_club.jpg"
+                alt="Join our text club"
                 width={1200}
                 height={675}
                 className="rounded-lg"
