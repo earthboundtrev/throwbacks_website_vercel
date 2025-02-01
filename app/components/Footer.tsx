@@ -20,8 +20,8 @@ export default function Footer() {
               <Link href="/" className="text-sm hover:text-primary">
                 Home
               </Link>
-              <Link href="/what-to-expect" className="text-sm hover:text-primary">
-                What to Expect
+              <Link href="/how-to-play" className="text-sm hover:text-primary">
+                How to Play
               </Link>
               <Link href="/games" className="text-sm hover:text-primary">
                 Games

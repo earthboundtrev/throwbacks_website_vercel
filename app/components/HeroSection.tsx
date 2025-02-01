@@ -41,14 +41,14 @@ export default function HeroSection() {
         </h1>
         <p className="text-xl mb-8">Step back in time to the golden age of gaming!</p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/games">
+          <Link href="/how-to-play">
             <Button 
               className="text-2xl py-6 px-8 bg-primary hover:bg-primary/80 text-white font-bold rounded-full shadow-lg transform transition hover:scale-105 pixel-corners w-full sm:w-auto"
               onClick={() => {
                 window.scrollTo(0, 0)
               }}
             >
-              Explore the Arcade
+              How to Play
             </Button>
           </Link>
           <Link href="/menu">
