@@ -15,7 +15,7 @@ export default function HowToPlayPage() {
       <div className="space-y-16">
         {/* Tickets Section */}
         <section className="flex flex-col md:flex-row gap-8 items-center">
-          <div className="w-full md:w-1/2">
+          <div className="md:w-1/2 order-2 md:order-1">
             <div className="bg-secondary/30 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 neon-border">
               <Image
                 src="https://pub-ffac2d7c13df4c70bc02719f375f929c.r2.dev/busy_throwbacks.jpg"
@@ -26,7 +26,7 @@ export default function HowToPlayPage() {
               />
             </div>
           </div>
-          <div className="w-full md:w-1/2 space-y-4">
+          <div className="md:w-1/2 order-1 md:order-2 space-y-4">
             <h2 className="text-2xl mb-4 neon-text-orange">Join the Fun</h2>
             <p className="text-lg">
               Your gateway to retro gaming paradise is just $15 per person! Once you've got your arcade pass, 
