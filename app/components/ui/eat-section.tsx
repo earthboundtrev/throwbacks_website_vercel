@@ -7,7 +7,7 @@ export function EatSection() {
     <section className="py-16">
       <div className="container">
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="space-y-6">
+          <div className="space-y-6 order-2 md:order-1">
             <div className="space-y-4">
               <h2 className="text-4xl font-bold">Fuel Up</h2>
               <p className="text-muted-foreground text-lg">
@@ -26,7 +26,7 @@ export function EatSection() {
               </Link>
             </div>
           </div>
-          <div className="relative aspect-video">
+          <div className="relative aspect-video order-1 md:order-2">
             <Image
               src="https://pub-ffac2d7c13df4c70bc02719f375f929c.r2.dev/pizza_and_chips.jpg"
               alt="Arcade food and drinks"
