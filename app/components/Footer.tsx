@@ -30,7 +30,7 @@ export default function Footer() {
                 Menu
               </Link>
               <Link href="/party" className="text-sm hover:text-primary">
-                Party
+                Parties
               </Link>
               <Link href="/events" className="text-sm hover:text-primary">
                 Events
