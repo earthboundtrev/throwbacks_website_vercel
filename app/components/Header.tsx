@@ -33,6 +33,7 @@ export default function Header() {
         <NeonSign />
         <nav className="hidden md:flex space-x-6">
           <NavItem href="/">Home</NavItem>
+          <NavItem href="/what-to-expect">What to Expect</NavItem>
           <NavItem href="/games">Games</NavItem>
           <NavItem href="/menu">Menu</NavItem>
           <NavItem href="/events">Events</NavItem>
@@ -46,6 +47,7 @@ export default function Header() {
       {isMenuOpen && (
         <nav className="md:hidden mt-4 flex flex-col space-y-4">
           <NavItem href="/">Home</NavItem>
+          <NavItem href="/what-to-expect">What to Expect</NavItem>
           <NavItem href="/games">Games</NavItem>
           <NavItem href="/menu">Menu</NavItem>
           <NavItem href="/events">Events</NavItem>

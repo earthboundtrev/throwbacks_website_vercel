@@ -100,3 +100,17 @@
   -webkit-text-fill-color: transparent;
 }
 
+.neon-text-orange {
+  text-shadow: 0 0 7px #FF6B00,
+               0 0 10px #FF6B00,
+               0 0 21px #FF6B00,
+               0 0 42px #FF6B00;
+}
+
+.neon-text-purple {
+  text-shadow: 0 0 7px #9D00FF,
+               0 0 10px #9D00FF,
+               0 0 21px #9D00FF,
+               0 0 42px #9D00FF;
+}
+

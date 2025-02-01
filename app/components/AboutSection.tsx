@@ -10,12 +10,12 @@ export default function AboutSection() {
             <p className="text-lg">
               Welcome to Throwbacks Arcade! Step into a time machine where the golden age of 
               gaming comes alive with the familiar beeps, boops, and flashing lights of 
-              classic arcade cabinets. We're taking you back to when gaming was all about community, 
+              classic arcade cabinets and pinball machines. We're taking you back to when gaming was all about community, 
               when arcades were the place to gather with friends, and when things were simply... fun.
             </p>
             <p>
               Established in August 2024 in beautiful downtown Culpeper, we're bringing the magic 
-              of 80s arcade culture to our community. Our carefully curated collection of 
+              of 80s and 90s arcade culture to our community. Our carefully curated collection of 
               authentic arcade games and pinball machines creates the perfect blend of 
               nostalgia and fun.
             </p>

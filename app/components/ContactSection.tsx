@@ -1,33 +1,116 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { MapPin, Phone, Mail } from "lucide-react"
+import emailjs from '@emailjs/browser'
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
+    phone: ""
   })
 
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }))
+  const [errors, setErrors] = useState({
+    name: false,
+    email: false,
+    message: false,
+    phone: false
+  })
+
+  useEffect(() => {
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+    if (!publicKey) {
+      console.error('EmailJS Public Key is missing!');
+      return;
+    }
+    
+    try {
+      emailjs.init(publicKey);
+      console.log('EmailJS Initialized with public key');
+    } catch (error) {
+      console.error('EmailJS Init Error:', error);
+    }
+  }, []);
+
+  const isValidPhone = (phone: string) => {
+    const phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+    return phoneRegex.test(phone);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    
+    if (name === 'phone') {
+      const sanitizedValue = value.replace(/[^\d() -]/g, '');
+      setFormData(prev => ({ ...prev, [name]: sanitizedValue }));
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
+
+    setErrors(prev => ({ ...prev, [name]: false }));
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // Here you would typically send the form data to your server
-    console.log("Form submitted:", formData)
-    // Reset form after submission
-    setFormData({ name: "", email: "", message: "" })
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const newErrors = {
+      name: !formData.name.trim(),
+      email: !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email),
+      message: !formData.message.trim(),
+      phone: !isValidPhone(formData.phone)
+    };
+
+    setErrors(newErrors);
+
+    if (Object.values(newErrors).some(error => error)) {
+      alert('Please fill in all required fields correctly.');
+      return;
+    }
+
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error('Missing EmailJS configuration:', {
+        serviceId: !!serviceId,
+        templateId: !!templateId,
+        publicKey: !!publicKey
+      });
+      alert('Email configuration error. Please contact the administrator.');
+      return;
+    }
+
+    const templateParams = {
+      to_email: 'ThrowbacksCulpeper@gmail.com',
+      from_name: formData.name,
+      reply_to: formData.email,
+      message: formData.message,
+      phone: formData.phone
+    };
+    
+    console.log('Sending email with params:', templateParams);
+
+    try {
+      const response = await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
+      );
+      console.log('EmailJS Response:', response);
+      setFormData({ name: '', email: '', message: '', phone: '' });
+      alert('Message sent successfully!');
+    } catch (error) {
+      console.error('EmailJS Error Details:', error);
+      alert('Failed to send message. Please try again.');
+    }
   }
 
   return (
@@ -43,7 +126,7 @@ export default function ContactSection() {
             <form onSubmit={handleSubmit}>
               <div className="mb-4">
                 <label htmlFor="name" className="block text-sm font-medium text-muted-foreground mb-1">
-                  Name
+                  Name <span className="text-red-500">*</span>
                 </label>
                 <Input
                   type="text"
@@ -52,12 +135,14 @@ export default function ContactSection() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full bg-muted text-foreground"
+                  className={`w-full bg-muted text-foreground ${
+                    errors.name ? 'border-red-500' : ''
+                  }`}
                 />
               </div>
               <div className="mb-4">
                 <label htmlFor="email" className="block text-sm font-medium text-muted-foreground mb-1">
-                  Email
+                  Email <span className="text-red-500">*</span>
                 </label>
                 <Input
                   type="email"
@@ -66,12 +151,36 @@ export default function ContactSection() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full bg-muted text-foreground"
+                  className={`w-full bg-muted text-foreground ${
+                    errors.email ? 'border-red-500' : ''
+                  }`}
                 />
               </div>
               <div className="mb-4">
+                <label htmlFor="phone" className="block text-sm font-medium text-muted-foreground mb-1">
+                  Phone <span className="text-red-500">*</span>
+                </label>
+                <Input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="(123) 456-7890"
+                  required
+                  className={`w-full bg-muted text-foreground ${
+                    errors.phone ? 'border-red-500' : ''
+                  }`}
+                />
+                {errors.phone && (
+                  <p className="mt-1 text-sm text-red-500">
+                    Please enter a valid phone number
+                  </p>
+                )}
+              </div>
+              <div className="mb-4">
                 <label htmlFor="message" className="block text-sm font-medium text-muted-foreground mb-1">
-                  Message
+                  Message <span className="text-red-500">*</span>
                 </label>
                 <Textarea
                   id="message"
@@ -79,7 +188,9 @@ export default function ContactSection() {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="w-full bg-muted text-foreground"
+                  className={`w-full bg-muted text-foreground ${
+                    errors.message ? 'border-red-500' : ''
+                  }`}
                   rows={4}
                 />
               </div>
@@ -108,7 +219,7 @@ export default function ContactSection() {
               </div>
               <div className="flex items-center">
                 <Mail className="h-5 w-5 mr-2 text-secondary" />
-                <p className="text-muted-foreground">info@throwbacksarcade.com</p>
+                <p className="text-muted-foreground">ThrowbacksCulpeper@gmail.com</p>
               </div>
             </div>
             <div className="mt-4 h-[300px] w-full">
