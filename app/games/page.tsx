@@ -201,10 +201,10 @@ const pinballGames = [
     year: 2010,
   },
   {
-    name: "James",
+    name: "Jaws",
     image: "/placeholder.svg?height=400&width=300",
-    description: "Classic pinball adventure.",
-    year: 1989,
+    description: "Based on the classic shark movie, featuring mechanical shark targets and ocean-themed gameplay.",
+    year: 1988,
   },
   {
     name: "Jurassic Park",
