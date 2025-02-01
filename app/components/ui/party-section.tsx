@@ -25,7 +25,7 @@ export function PartySection() {
               </p>
             </div>
             <div className="flex justify-center">
-              <Link href="/events">
+              <Link href="/party">
                 <Button size="lg">
                   Learn More
                 </Button>

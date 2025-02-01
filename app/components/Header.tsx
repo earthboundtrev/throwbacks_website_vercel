@@ -36,6 +36,7 @@ export default function Header() {
           <NavItem href="/how-to-play">How to Play</NavItem>
           <NavItem href="/games">Games</NavItem>
           <NavItem href="/menu">Menu</NavItem>
+          <NavItem href="/party">Party</NavItem>
           <NavItem href="/events">Events</NavItem>
           {/* <NavItem href="/about">About</NavItem> */}
           {/* <NavItem href="/contact">Contact</NavItem> */}
@@ -50,6 +51,7 @@ export default function Header() {
           <NavItem href="/how-to-play">How to Play</NavItem>
           <NavItem href="/games">Games</NavItem>
           <NavItem href="/menu">Menu</NavItem>
+          <NavItem href="/party">Party</NavItem>
           <NavItem href="/events">Events</NavItem>
           {/* <NavItem href="/about">About</NavItem> */}
           {/* <NavItem href="/contact">Contact</NavItem> */}

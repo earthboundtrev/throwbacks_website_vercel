@@ -48,8 +48,8 @@ export default function EventsPage() {
 
   return (
     <div className="container mx-auto py-16">
-      <h1 className="text-4xl font-bold text-center mb-4 neon-text">Events & Parties</h1>
-      <p className="text-center text-muted-foreground mb-8">Join us for special events or book your own party!</p>
+      <h1 className="text-4xl font-bold text-center mb-4 neon-text">Events</h1>
+      <p className="text-center text-muted-foreground mb-8">Join us for special events!</p>
       
       {/* Regular Events Section */}
       <h2 className="text-2xl font-bold mb-6 text-primary">Regular Events</h2>

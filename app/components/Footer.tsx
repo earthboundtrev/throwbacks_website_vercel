@@ -29,6 +29,9 @@ export default function Footer() {
               <Link href="/menu" className="text-sm hover:text-primary">
                 Menu
               </Link>
+              <Link href="/party" className="text-sm hover:text-primary">
+                Party
+              </Link>
               <Link href="/events" className="text-sm hover:text-primary">
                 Events
               </Link>
