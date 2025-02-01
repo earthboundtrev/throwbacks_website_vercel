@@ -31,15 +31,6 @@ const events = [
       "Support local schools during our Spirit Nights! $10.00 admission includes access to all games, with food available for purchase. Parent supervision required - this is not a drop-off event. Remember to mention your school's code!",
     image: "https://pub-ffac2d7c13df4c70bc02719f375f929c.r2.dev/spirit_night_1-29.jpg",
     isRegular: false,
-  },
-  {
-    title: "Private Parties",
-    date: "Available Daily",
-    time: "2 Hour Sessions",
-    description:
-      "$300 for 2 hours for 20 guests. Each additional guest $10. Includes 1 free soda and popcorn per person. Bring your own cake/cupcakes or order from our menu. Guests can stay after during regular hours.",
-    image: "https://pub-ffac2d7c13df4c70bc02719f375f929c.r2.dev/birthday_parties.jpg",
-    isRegular: true,
   }
 ]
 
