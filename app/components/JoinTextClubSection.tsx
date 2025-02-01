@@ -18,7 +18,7 @@ export default function GamesSection() {
           >
             <Image
               src="https://pub-ffac2d7c13df4c70bc02719f375f929c.r2.dev/join_our_text_club.jpg"
-              alt="Faraway Games"
+              alt="Join our text club!"
               width={800}
               height={450}
               className="rounded-lg"
@@ -34,7 +34,7 @@ export default function GamesSection() {
             <div className="max-w-[90vw] max-h-[90vh]">
               <Image
                 src="https://pub-ffac2d7c13df4c70bc02719f375f929c.r2.dev/join_our_text_club.jpg"
-                alt="Join our text club"
+                alt="Join our text club!"
                 width={1200}
                 height={675}
                 className="rounded-lg"
