@@ -10,7 +10,7 @@ const BackgroundImage = () => (
     <div
       className="w-full h-full bg-center bg-cover bg-no-repeat"
       style={{
-        backgroundImage: `url("https://pub-ffac2d7c13df4c70bc02719f375f929c.r2.dev/pinball_collection_facebook_header.jpg")`,
+        backgroundImage: `url("https://pub-ffac2d7c13df4c70bc02719f375f929c.r2.dev/throwbacks_daytime.jpg")`,
         filter: 'brightness(0.9)',
       }}
     ></div>
