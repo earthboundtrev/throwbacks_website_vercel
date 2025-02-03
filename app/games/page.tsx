@@ -12,6 +12,12 @@ const games = [
     year: 1979,
   },
   {
+    name: "Area 51",
+    image: "/placeholder.svg?height=400&width=300",
+    description: "Light gun rail shooter featuring government conspiracies and aliens.",
+    year: 1995,
+  },
+  {
     name: "Big Buck Hunt",
     image: "/placeholder.svg?height=400&width=300",
     description: "Classic light gun hunting arcade game.",
@@ -78,10 +84,28 @@ const games = [
     year: 1997,
   },
   {
-    name: "Missile Command",
+    name: "Maximum Force",
     image: "/placeholder.svg?height=400&width=300",
-    description: "Defend your cities from incoming missile attacks.",
-    year: 1980,
+    description: "Light gun shooter with multiple mission scenarios.",
+    year: 1997,
+  },
+  {
+    name: "Mortal Kombat",
+    image: "/placeholder.svg?height=400&width=300",
+    description: "Iconic fighting game known for its brutal combat and fatalities.",
+    year: 1992,
+  },
+  {
+    name: "Mortal Kombat II",
+    image: "/placeholder.svg?height=400&width=300",
+    description: "Sequel to the original Mortal Kombat with expanded roster and features.",
+    year: 1993,
+  },
+  {
+    name: "Mortal Kombat 3",
+    image: "/placeholder.svg?height=400&width=300",
+    description: "Third installment in the Mortal Kombat series with new combo system.",
+    year: 1995,
   },
   {
     name: "Ms. Pac-Man",
@@ -111,6 +135,12 @@ const games = [
     name: "Pac-Man",
     image: "/placeholder.svg?height=400&width=300",
     description: "Navigate through a maze, eating dots and avoiding ghosts.",
+    year: 1980,
+  },
+  {
+    name: "Phoenix",
+    image: "/placeholder.svg?height=400&width=300",
+    description: "Space shooter featuring birds and motherships.",
     year: 1980,
   },
   {
@@ -167,14 +197,38 @@ const games = [
     description: "Time-traveling aerial combat game.",
     year: 1982,
   },
+  {
+    name: "Ultimate Mortal Kombat 3",
+    image: "/placeholder.svg?height=400&width=300",
+    description: "Enhanced version of Mortal Kombat 3 with additional characters and features.",
+    year: 1995,
+  },
+  {
+    name: "Return of the Jedi",
+    image: "/placeholder.svg?height=400&width=300",
+    description: "Star Wars arcade game based on Episode VI.",
+    year: 1984,
+  },
+  {
+    name: "Street Fighter II Champion Edition",
+    image: "/placeholder.svg?height=400&width=300",
+    description: "Updated version of Street Fighter II with playable boss characters.",
+    year: 1992,
+  },
+  {
+    name: "Street Fighter II Turbo",
+    image: "/placeholder.svg?height=400&width=300",
+    description: "Enhanced version of Street Fighter II with increased game speed and new moves.",
+    year: 1993,
+  },
 ].sort((a, b) => a.name.localeCompare(b.name))
 
 const pinballGames = [
   {
-    name: "Batman",
+    name: "Batman (Dark Knight)",
     image: "/placeholder.svg?height=400&width=300",
     description: "DC Comics themed pinball machine featuring the Dark Knight.",
-    year: 1991,
+    year: 2008,
   },
   {
     name: "Dirty Harry",
@@ -183,10 +237,28 @@ const pinballGames = [
     year: 1995,
   },
   {
+    name: "Dungeons & Dragons",
+    image: "/placeholder.svg?height=400&width=300",
+    description: "Fantasy adventure themed pinball based on the legendary tabletop RPG.",
+    year: 2019,
+  },
+  {
     name: "Game of Thrones",
     image: "/placeholder.svg?height=400&width=300",
     description: "Based on the hit HBO series with multiple game modes.",
     year: 2015,
+  },
+  {
+    name: "Godzilla",
+    image: "/placeholder.svg?height=400&width=300",
+    description: "Monster-themed pinball featuring the King of Monsters.",
+    year: 2022,
+  },
+  {
+    name: "Guns N' Roses",
+    image: "/placeholder.svg?height=400&width=300",
+    description: "Rock themed pinball machine featuring the legendary band's greatest hits.",
+    year: 1994,
   },
   {
     name: "Indiana Jones",
@@ -253,6 +325,18 @@ const pinballGames = [
     image: "/placeholder.svg?height=400&width=300",
     description: "Magic show themed pinball with innovative features.",
     year: 1995,
+  },
+  {
+    name: "The Beatles",
+    image: "/placeholder.svg?height=400&width=300",
+    description: "Celebration of the Fab Four featuring their iconic music and imagery.",
+    year: 2018,
+  },
+  {
+    name: "X-Men",
+    image: "/placeholder.svg?height=400&width=300",
+    description: "Marvel Comics themed pinball featuring the mutant superhero team.",
+    year: 2012,
   },
 ].sort((a, b) => a.name.localeCompare(b.name))
 
