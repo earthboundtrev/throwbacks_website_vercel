@@ -17,7 +17,7 @@ export function PlaySection() {
           </div>
           <div className="space-y-6">
             <div className="space-y-4">
-              <h2 className="text-4xl font-bold">Game On</h2>
+              <h2 className="text-4xl font-bold text-center">Game On</h2>
               <p className="text-muted-foreground text-lg">
                 Step into gaming paradise with over 70+ classic arcade cabinets and pinball 
                 machines, all set to free play mode. Experience the golden age of gaming without 
@@ -26,8 +26,10 @@ export function PlaySection() {
             </div>
             <div className="flex justify-center">
               <Link href="/games">
-                <Button size="lg">
-                  Check out the Arcade
+                <Button 
+                  className="text-2xl py-6 px-8 bg-primary hover:bg-primary/80 text-white font-bold rounded-full shadow-lg transform transition hover:scale-105 pixel-corners"
+                >
+                  See Games
                 </Button>
               </Link>
             </div>

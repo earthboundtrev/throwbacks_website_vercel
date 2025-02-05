@@ -9,7 +9,7 @@ export function EatSection() {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6 order-2 md:order-1">
             <div className="space-y-4">
-              <h2 className="text-4xl font-bold">Fuel Up</h2>
+              <h2 className="text-4xl font-bold text-center">Fuel Up</h2>
               <p className="text-muted-foreground text-lg">
                 Step into our kitchen where classic arcade eats meet modern flavors! From our 
                 crispy chicken sandwiches and cheesy quesadillas to golden onion rings and 
@@ -20,8 +20,10 @@ export function EatSection() {
             </div>
             <div className="flex justify-center">
               <Link href="/menu">
-                <Button size="lg">
-                  See the Menu
+                <Button 
+                  className="text-2xl py-6 px-8 bg-primary hover:bg-primary/80 text-white font-bold rounded-full shadow-lg transform transition hover:scale-105 pixel-corners"
+                >
+                  See Menu
                 </Button>
               </Link>
             </div>

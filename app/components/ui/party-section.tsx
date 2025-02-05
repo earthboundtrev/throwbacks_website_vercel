@@ -17,7 +17,7 @@ export function PartySection() {
           </div>
           <div className="space-y-6">
             <div className="space-y-4">
-              <h2 className="text-4xl font-bold">Party Time</h2>
+              <h2 className="text-4xl font-bold text-center">Party Time</h2>
               <p className="text-muted-foreground text-lg">
                 Create unforgettable memories in our dedicated party space! Our 2-hour VIP room 
                 packages include 20 guest passes, a private gaming area, and the flexibility to 
@@ -26,7 +26,9 @@ export function PartySection() {
             </div>
             <div className="flex justify-center">
               <Link href="/party">
-                <Button size="lg">
+                <Button 
+                  className="text-2xl py-6 px-8 bg-primary hover:bg-primary/80 text-white font-bold rounded-full shadow-lg transform transition hover:scale-105 pixel-corners"
+                >
                   Learn More
                 </Button>
               </Link>
