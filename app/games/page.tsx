@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 
 const games = [
   {
@@ -436,12 +437,12 @@ export default function GamesPage() {
 
         {/* Mid-page Back to Top Button */}
         <div className="text-center pt-8">
-          <button
+          <Button
             onClick={scrollToTop}
-            className="px-6 py-3 text-lg font-semibold neon-border pixel-corners bg-[#2A0E61] hover:bg-[#3A1661] text-white transition-colors duration-200"
+            className="text-2xl py-6 px-8 bg-primary hover:bg-primary/80 text-white font-bold rounded-full shadow-lg transform transition hover:scale-105 pixel-corners w-full sm:w-auto"
           >
             Back to Top
-          </button>
+          </Button>
         </div>
 
         {/* Pinball Section */}
@@ -491,12 +492,12 @@ export default function GamesPage() {
 
         {/* Bottom Back to Top Button */}
         <div className="text-center pt-8">
-          <button
+          <Button
             onClick={scrollToTop}
-            className="px-6 py-3 text-lg font-semibold neon-border pixel-corners bg-[#2A0E61] hover:bg-[#3A1661] text-white transition-colors duration-200"
+            className="text-2xl py-6 px-8 bg-[#2A0E61] hover:bg-[#3A1661] text-white font-bold rounded-full shadow-lg transform transition hover:scale-105 pixel-corners w-full sm:w-auto"
           >
             Back to Top
-          </button>
+          </Button>
         </div>
       </div>
     </div>

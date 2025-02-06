@@ -1,6 +1,7 @@
 import { Metadata } from "next"
 import Link from "next/link"
 import Image from 'next/image'
+import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "How to Play - Throwbacks Arcade",
@@ -63,11 +64,12 @@ export default function HowToPlayPage() {
         </section>
 
         <div className="text-center">
-          <Link 
-            href="/games" 
-            className="bg-primary hover:bg-primary/80 text-black font-bold py-2 px-6 rounded pixel-corners inline-block"
-          >
-            Explore our games
+          <Link href="/games">
+            <Button 
+              className="text-2xl py-6 px-8 bg-primary hover:bg-primary/80 text-white font-bold rounded-full shadow-lg transform transition hover:scale-105 pixel-corners w-full sm:w-auto"
+            >
+              Explore our games
+            </Button>
           </Link>
         </div>
       </div>
