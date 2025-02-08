@@ -11,7 +11,7 @@ export function EatSection() {
             <div className="space-y-4">
               <h2 className="text-4xl font-bold text-center">Fuel Up</h2>
               <p className="text-muted-foreground text-lg">
-                Step into our kitchen where classic arcade fair meet modern flavors! From our 
+                Step into our kitchen where classic arcade fare meet modern flavors! From our 
                 crispy chicken sandwiches and cheesy quesadillas to golden onion rings and 
                 fresh-baked pretzels, we're serving up the perfect fuel for your gaming adventures. 
                 Pair your meal with an ice-cold craft beer or your favorite soft drink, all made 
