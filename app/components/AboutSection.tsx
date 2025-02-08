@@ -23,14 +23,14 @@ export default function AboutSection() {
           <div className="space-y-4">
             <h3 className="text-xl font-semibold">Our Mission</h3>
             <p>
-              To create an authentic retro gaming experience that brings our community 
-              together through the timeless joy of arcade games.
+              We aim to create an authentic retro gaming experience that brings our community 
+              together through the timeless joy of arcade games by:
             </p>
             <ul className="list-disc list-inside space-y-2">
-              <li>Preserve classic arcade culture</li>
-              <li>Create lasting memories</li>
-              <li>Build community connections</li>
-              <li>Share the magic of retro gaming</li>
+              <li>Preserving classic arcade culture</li>
+              <li>Creating lasting memories</li>
+              <li>Building community connections</li>
+              <li>Sharing the magic of retro gaming</li>
             </ul>
           </div>
         </div>

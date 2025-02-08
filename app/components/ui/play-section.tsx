@@ -19,9 +19,12 @@ export function PlaySection() {
             <div className="space-y-4">
               <h2 className="text-4xl font-bold text-center">Game On</h2>
               <p className="text-muted-foreground text-lg">
-                Step into gaming paradise with over 70+ classic arcade cabinets and pinball 
-                machines, all set to free play mode. Experience the golden age of gaming without 
-                spending a single quarter.
+                Step into gaming paradise with over 70 classic arcade cabinets and pinball 
+                machines, all set to free play mode. Experience the golden age of gaming without the heavy quarters wearing down your pockets. Play all day with a{" "}
+                <Link href="/how-to-play" className="text-primary hover:underline">
+                  single entry pass
+                </Link>
+                .
               </p>
             </div>
             <div className="flex justify-center">
