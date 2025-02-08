@@ -235,7 +235,7 @@ export default function ContactSection() {
               ></iframe>
             </div>
             <div className="mt-6">
-              <h3 className="text-xl font-bold mb-2 text-primary">Opening Hours</h3>
+              <h3 className="text-xl font-bold mb-2 text-primary">Store Hours</h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li>Monday - Tuesday: Closed</li>
                 <li>Wednesday - Thursday: 5:00 PM - 9:00 PM</li>

@@ -8,8 +8,16 @@ export default function Footer() {
       <div className="container mx-auto">
         {/* Mobile: Stack vertically */}
         <div className="flex flex-col md:flex-row md:justify-between items-center md:items-start">
-          {/* Company Name - Left Column */}
+          {/* Hours and Copyright - Left Column */}
           <div className="mb-8 md:mb-0">
+            <h3 className="text-sm font-semibold mb-4">Store Hours</h3>
+            <div className="text-sm space-y-1 mb-6">
+              <p>Monday - Tuesday: Closed</p>
+              <p>Wednesday - Thursday: 5:00 PM - 9:00 PM</p>
+              <p>Friday: 5:00 PM - 11:00 PM</p>
+              <p>Saturday: 12:00 PM - 11:00 PM</p>
+              <p>Sunday: 12:00 PM - 6:00 PM</p>
+            </div>
             <p className="text-sm">© 2025 Throwbacks Arcade</p>
           </div>
 
