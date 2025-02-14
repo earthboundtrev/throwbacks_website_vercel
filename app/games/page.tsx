@@ -92,7 +92,7 @@ const games = [
   {
     name: "Burger Time",
     image: getImageUrl(ImagePaths.BURGER_TIME),
-    description: "Time-bending arcade adventure.",
+    description: "Help Chef Peter Pepper create giant burgers while avoiding food enemies like hot dogs and eggs.",
     year: 1982,
   },
   {
