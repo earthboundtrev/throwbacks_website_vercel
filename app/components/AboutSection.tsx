@@ -14,7 +14,7 @@ export default function AboutSection() {
               when arcades were the place to gather with friends, and when things were simply... fun.
             </p>
             <p>
-              Established in August 2024 in beautiful downtown Culpeper, we're bringing the magic 
+              Established in July 2024 in beautiful downtown Culpeper, we're bringing the magic 
               of 80s and 90s arcade culture to our community. Our carefully curated collection of 
               authentic arcade games and pinball machines creates the perfect blend of 
               nostalgia and fun.
