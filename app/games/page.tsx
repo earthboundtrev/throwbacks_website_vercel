@@ -52,18 +52,21 @@ const ImagePaths = {
   GODZILLA: 'godzilla.jpg',
   GUNS_N_ROSES: 'guns-n-roses.png',
   INDIANA_JONES: 'indiana-jones-pinball.jpg',
-  IRON_MAN: 'iron-man-pinball.jpg',
   JAWS: 'jaws-pinball.png',
   JURASSIC_PARK: 'jurassic-park-pinball.png',
   LED_ZEPPELIN: 'led-zeppelin-pinball.jpg',
-  MEDIEVAL_MADNESS: 'medieval-madness-pinball.png',
   STAR_WARS: 'star-wars-pinball.jpg',
   TERMINATOR_2: 'terminator-2-judgement-day.png',
-  ADDAMS_FAMILY: 'the-adams-family-pinball.png',
   MUNSTERS: 'the-munsters-pinball.jpg',
   THEATRE_MAGIC: 'theatre-of-magic-pinball.jpg',
-  BEATLES: 'the-beatles-pinball.jpg',
   XMEN: 'x-men-pinball.jpg',
+  XFILES: 'x-files-pinball.jpg',
+  MANDALORIAN: 'mandalorian-pinball.jpg',
+  // Add redemption game paths
+  AIR_HOCKEY: 'air-hockey.jpg',
+  FOOSBALL: 'foosball.jpg',
+  ROCK_THE_RIM: 'rock-the-rim.jpg',
+  SKEEBALL: 'skeeball.jpg',
 } as const;
 
 function getImageUrl(imagePath: string): string {
@@ -333,12 +336,6 @@ const pinballGames = [
     year: 1993,
   },
   {
-    name: "Iron Man",
-    image: getImageUrl(ImagePaths.IRON_MAN),
-    description: "Marvel Comics themed machine featuring Tony Stark.",
-    year: 2010,
-  },
-  {
     name: "Jaws",
     image: getImageUrl(ImagePaths.JAWS),
     description: "Based on the classic shark movie, featuring mechanical shark targets and ocean-themed gameplay.",
@@ -357,10 +354,10 @@ const pinballGames = [
     year: 2020,
   },
   {
-    name: "Medieval Madness",
-    image: getImageUrl(ImagePaths.MEDIEVAL_MADNESS),
-    description: "Fantasy themed pinball with castle destruction features.",
-    year: 1997,
+    name: "The Mandalorian",
+    image: getImageUrl(ImagePaths.MANDALORIAN),
+    description: "Based on the hit Star Wars streaming series featuring Din Djarin and Grogu.",
+    year: 2021,
   },
   {
     name: "Star Wars",
@@ -375,12 +372,6 @@ const pinballGames = [
     year: 1991,
   },
   {
-    name: "The Addams Family",
-    image: getImageUrl(ImagePaths.ADDAMS_FAMILY),
-    description: "Gothic family themed pinball machine.",
-    year: 1992,
-  },
-  {
     name: "The Munsters",
     image: getImageUrl(ImagePaths.MUNSTERS),
     description: "Classic TV show themed pinball machine.",
@@ -393,10 +384,10 @@ const pinballGames = [
     year: 1995,
   },
   {
-    name: "The Beatles",
-    image: getImageUrl(ImagePaths.BEATLES),
-    description: "Celebration of the Fab Four featuring their iconic music and imagery.",
-    year: 2018,
+    name: "The X-Files",
+    image: getImageUrl(ImagePaths.XFILES),
+    description: "Based on the supernatural investigation TV series featuring Mulder and Scully.",
+    year: 1997,
   },
   {
     name: "X-Men",
@@ -406,24 +397,40 @@ const pinballGames = [
   },
 ].sort((a, b) => a.name.localeCompare(b.name))
 
+const redemptionGames = [
+  {
+    name: "Air Hockey",
+    image: getImageUrl(ImagePaths.AIR_HOCKEY),
+    description: "Classic air-powered table hockey game for two players.",
+    year: null,
+  },
+  {
+    name: "Foosball",
+    image: getImageUrl(ImagePaths.FOOSBALL),
+    description: "Table soccer game featuring rotating player rods.",
+    year: null,
+  },
+  {
+    name: "Rock the Rim",
+    image: getImageUrl(ImagePaths.ROCK_THE_RIM),
+    description: "Basketball shooting game with moving hoops.",
+    year: null,
+  },
+  {
+    name: "Skeeball",
+    image: getImageUrl(ImagePaths.SKEEBALL),
+    description: "Classic bowling-style game where players roll balls into scoring rings.",
+    year: null,
+  },
+].sort((a, b) => a.name.localeCompare(b.name))
+
 export default function GamesPage() {
   const [selectedGame, setSelectedGame] = useState<string | null>(null)
   const [selectedPinball, setSelectedPinball] = useState<string | null>(null)
-  const [activeSection, setActiveSection] = useState<'videogames' | 'pinball'>('videogames')
+  const [selectedRedemption, setSelectedRedemption] = useState<string | null>(null)
+  const [activeSection, setActiveSection] = useState<'videogames' | 'pinball' | 'redemption'>('videogames')
 
-  const toggleGame = (gameName: string) => {
-    setSelectedGame(selectedGame === gameName ? null : gameName)
-    setSelectedPinball(null)
-    setActiveSection('videogames')
-  }
-
-  const togglePinball = (pinballName: string) => {
-    setSelectedPinball(selectedPinball === pinballName ? null : pinballName)
-    setSelectedGame(null)
-    setActiveSection('pinball')
-  }
-
-  const scrollToSection = (section: 'videogames' | 'pinball') => {
+  const scrollToSection = (section: 'videogames' | 'pinball' | 'redemption') => {
     const element = document.getElementById(`${section}-section`)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
@@ -452,18 +459,24 @@ export default function GamesPage() {
         >
           Pinball
         </span>
+        <span className="mx-4">|</span>
+        <span 
+          onClick={() => scrollToSection('redemption')}
+          className="neon-text-blue cursor-pointer hover:opacity-80 transition-opacity"
+        >
+          Redemption Games
+        </span>
       </div>
       
       <div className="space-y-16">
         {/* Videogames Section */}
         <div className="flex flex-col lg:flex-row gap-8" id="videogames-section">
           <div className="lg:w-1/3">
-            <h2 className="text-3xl font-bold mb-6 text-[#FF6B00] neon-text-orange">Videogames</h2>
+            <h2 className="text-3xl font-bold mb-6 neon-text-orange">Videogames</h2>
             <ul className="space-y-2">
               {games.map((game) => (
                 <li 
                   key={game.name}
-                  onClick={() => toggleGame(game.name)}
                   className={`cursor-pointer hover:text-[#FF6B00] transition-colors duration-200 text-lg ${
                     selectedGame === game.name ? 'text-[#FF6B00]' : ''
                   }`}
@@ -513,14 +526,13 @@ export default function GamesPage() {
         {/* Pinball Section */}
         <div className="flex flex-col lg:flex-row gap-8" id="pinball-section">
           <div className="lg:w-1/3">
-            <h2 className="text-3xl font-bold mb-6 text-[#9D00FF] neon-text-purple">Pinball</h2>
+            <h2 className="text-3xl font-bold mb-6 text-[#B026FF] neon-text-purple">Pinball</h2>
             <ul className="space-y-2">
               {pinballGames.map((pinball) => (
                 <li 
                   key={pinball.name}
-                  onClick={() => togglePinball(pinball.name)}
-                  className={`cursor-pointer hover:text-[#9D00FF] transition-colors duration-200 text-lg ${
-                    selectedPinball === pinball.name ? 'text-[#9D00FF]' : ''
+                  className={`cursor-pointer hover:text-[#B026FF] transition-colors duration-200 text-lg ${
+                    selectedPinball === pinball.name ? 'text-[#B026FF]' : ''
                   }`}
                 >
                   {pinball.name}
@@ -555,11 +567,62 @@ export default function GamesPage() {
           </div>
         </div>
 
+        {/* Pinball Back to Top Button */}
+        <div className="text-center pt-8">
+          <Button
+            onClick={scrollToTop}
+            className="text-2xl py-6 px-8 bg-[#B026FF] hover:bg-[#B026FF]/80 text-white font-bold rounded-full shadow-lg transform transition hover:scale-105 pixel-corners w-full sm:w-auto"
+          >
+            Back to Top
+          </Button>
+        </div>
+
+        {/* Redemption Games Section */}
+        <div className="flex flex-col lg:flex-row gap-8" id="redemption-section">
+          <div className="lg:w-1/3">
+            <h2 className="text-3xl font-bold mb-6 text-[#00BFFF] neon-text-blue">Redemption Games</h2>
+            <ul className="space-y-2">
+              {redemptionGames.map((game) => (
+                <li 
+                  key={game.name}
+                  className={`cursor-pointer hover:text-[#00BFFF] transition-colors duration-200 text-lg ${
+                    selectedRedemption === game.name ? 'text-[#00BFFF]' : ''
+                  }`}
+                >
+                  {game.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="lg:w-2/3">
+            {selectedRedemption && (
+              <Card className="bg-card text-card-foreground neon-border pixel-corners">
+                <CardHeader>
+                  <Image
+                    src={redemptionGames.find(g => g.name === selectedRedemption)?.image || "/placeholder.svg"}
+                    alt={selectedRedemption}
+                    width={300}
+                    height={400}
+                    className="w-full h-48 object-cover rounded-t-lg"
+                  />
+                </CardHeader>
+                <CardContent>
+                  <CardTitle className="text-2xl mb-2 text-primary">{selectedRedemption}</CardTitle>
+                  <p className="mb-4 text-muted-foreground">
+                    {redemptionGames.find(g => g.name === selectedRedemption)?.description}
+                  </p>
+                </CardContent>
+              </Card>
+            )}
+          </div>
+        </div>
+
         {/* Bottom Back to Top Button */}
         <div className="text-center pt-8">
           <Button
             onClick={scrollToTop}
-            className="text-2xl py-6 px-8 bg-[#2A0E61] hover:bg-[#3A1661] text-white font-bold rounded-full shadow-lg transform transition hover:scale-105 pixel-corners w-full sm:w-auto"
+            className="text-2xl py-6 px-8 bg-[#00BFFF] hover:bg-[#00BFFF]/80 text-white font-bold rounded-full shadow-lg transform transition hover:scale-105 pixel-corners w-full sm:w-auto"
           >
             Back to Top
           </Button>
