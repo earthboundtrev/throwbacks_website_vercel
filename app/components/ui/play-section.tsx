@@ -24,7 +24,7 @@ export function PlaySection() {
                 <Link href="/how-to-play" className="text-primary hover:underline">
                   single entry pass
                 </Link>
-                .
+                . Need a gaming break? Kick back and catch the big game or nostalgic reruns on our TVs showcasing everything from today's sports to yesterday's classics.
               </p>
             </div>
             <div className="flex justify-center">
