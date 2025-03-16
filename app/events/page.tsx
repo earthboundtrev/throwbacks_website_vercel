@@ -287,7 +287,18 @@ export default function EventsPage() {
   return (
     <div className="container mx-auto py-16">
       <h1 className="text-4xl font-bold text-center mb-4 neon-text">Events Calendar</h1>
-      <p className="text-center text-muted-foreground mb-8">Check out our upcoming events! Click the event to see more details!</p>
+      <p className="text-center text-muted-foreground mb-8">
+        Check out our upcoming events! Click the event to see more details! Follow us on{" "}
+        <a 
+          href="https://www.facebook.com/profile.php?id=61556280427238"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:underline"
+        >
+          Facebook
+        </a>
+        {" "}for the latest arcade happenings!
+      </p>
       
       <div className="mb-8 pixel-corners p-4 bg-card">
         <FullCalendar
