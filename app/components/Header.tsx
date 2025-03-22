@@ -1,10 +1,11 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
 
 const NeonSign = () => (
   <Link href="/" className="flex items-center space-x-2">
@@ -18,14 +19,24 @@ const NeonSign = () => (
   </Link>
 )
 
-const NavItem = ({ href, children }: { href: string; children: React.ReactNode }) => (
-  <Link href={href} className="text-lg hover:text-primary transition-colors">
+const NavItem = ({ href, children, onClick }: { 
+  href: string; 
+  children: React.ReactNode;
+  onClick?: () => void;
+}) => (
+  <Link href={href} className="text-lg hover:text-primary transition-colors" onClick={onClick}>
     {children}
   </Link>
 )
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
+
+  // Close menu when pathname changes (i.e., when navigation occurs)
+  useEffect(() => {
+    setIsMenuOpen(false)
+  }, [pathname])
 
   return (
     <header className="bg-background p-4 md:p-6 sticky top-0 z-50 neon-border">
