@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import ContactSection from "@/app/components/ContactSection"
 
 const teamMembers = [
   {
@@ -25,58 +26,42 @@ const teamMembers = [
 export default function AboutPage() {
   return (
     <div className="container mx-auto py-16">
-      <h1 className="text-4xl font-bold text-center mb-12 neon-text">About Throwbacks Arcade</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-        <div>
-          <h2 className="text-3xl font-bold mb-4 text-primary">Our Story</h2>
-          <p className="mb-4 text-muted-foreground">
-            Throwbacks Arcade was born from a passion for 80s gaming culture and a desire to preserve the magic of
-            classic arcade games. Founded in 2024, we've created a space where gamers of all ages can experience the
-            golden age of arcades, complete with authentic cabinets, neon lights, and the unmistakable sounds of 8-bit
-            adventures.
-          </p>
-          <p className="mb-4 text-muted-foreground">
-            Our mission is to provide a nostalgic yet exciting gaming experience that bridges generations. We believe in
-            the power of classic games to bring people together, spark creativity, and remind us of the simple joys of
-            friendly competition.
-          </p>
+      <h1 className="text-4xl font-bold text-center mb-12 neon-text">About Us</h1>
+      
+      <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
+        <div className="space-y-6">
+          <div className="space-y-4">
+            <p className="text-lg">
+              Welcome to Throwbacks Arcade! Step into a time machine where the golden age of 
+              gaming comes alive with the familiar beeps, boops, and flashing lights of 
+              classic arcade cabinets and pinball machines. We're taking you back to when gaming was all about community, 
+              when arcades were the place to gather with friends, and when things were simply... fun.
+            </p>
+            <p className="text-muted-foreground">
+              Established in July 2024 in beautiful downtown Culpeper, we're bringing the magic 
+              of 80s and 90s arcade culture to our community. Our carefully curated collection of 
+              authentic arcade games and pinball machines creates the perfect blend of 
+              nostalgia and fun.
+            </p>
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          <h2 className="text-2xl font-semibold neon-text">Our Mission</h2>
           <p className="text-muted-foreground">
-            At Throwbacks Arcade, we're not just about playing games – we're about creating memories, fostering a
-            community, and keeping the spirit of the 80s arcade scene alive in the modern world. Our collection of pinball
-            machines also helps recreate the 80s feel.
+            We aim to create an authentic retro gaming experience that brings our community 
+            together through the timeless joy of arcade games by:
           </p>
-        </div>
-        <div className="flex justify-center items-center">
-          <Image
-            src="/placeholder.svg?height=400&width=600"
-            alt="Throwbacks Arcade Interior"
-            width={600}
-            height={400}
-            className="rounded-lg shadow-2xl neon-border pixel-corners"
-          />
+          <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+            <li>Preserving classic arcade culture</li>
+            <li>Creating lasting memories</li>
+            <li>Building community connections</li>
+            <li>Sharing the magic of retro gaming</li>
+          </ul>
         </div>
       </div>
-      <h2 className="text-3xl font-bold text-center mb-8 neon-text">Meet Our Team</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {teamMembers.map((member, index) => (
-          <Card key={index} className="bg-card text-card-foreground neon-border pixel-corners">
-            <CardHeader>
-              <Image
-                src={member.image || "/placeholder.svg"}
-                alt={member.name}
-                width={300}
-                height={300}
-                className="w-full h-64 object-cover rounded-t-lg"
-              />
-            </CardHeader>
-            <CardContent>
-              <CardTitle className="text-2xl mb-2 text-primary">{member.name}</CardTitle>
-              <CardDescription className="text-muted-foreground mb-4">{member.role}</CardDescription>
-              <p className="text-muted-foreground">{member.bio}</p>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+
+      <ContactSection />
     </div>
   )
 }

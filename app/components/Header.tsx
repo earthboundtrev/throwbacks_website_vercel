@@ -49,7 +49,7 @@ export default function Header() {
           <NavItem href="/menu">Menu</NavItem>
           <NavItem href="/party">Parties</NavItem>
           <NavItem href="/events">Events</NavItem>
-          {/* <NavItem href="/about">About</NavItem> */}
+          <NavItem href="/about">About</NavItem>
           {/* <NavItem href="/contact">Contact</NavItem> */}
         </nav>
         <Button variant="outline" size="icon" className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -64,7 +64,7 @@ export default function Header() {
           <NavItem href="/menu">Menu</NavItem>
           <NavItem href="/party">Parties</NavItem>
           <NavItem href="/events">Events</NavItem>
-          {/* <NavItem href="/about">About</NavItem> */}
+          <NavItem href="/about">About</NavItem>
           {/* <NavItem href="/contact">Contact</NavItem> */}
         </nav>
       )}

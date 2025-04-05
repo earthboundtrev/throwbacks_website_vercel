@@ -11,7 +11,6 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
-      <AboutSection />
       <div className="space-y-16 py-16">
         <PlaySection />
         <EatSection />
