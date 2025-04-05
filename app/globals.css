@@ -26,6 +26,8 @@
     --input: 240 5.9% 90%;
     --ring: 24 100% 50%;
     --radius: 0.5rem;
+    --background: #000000;
+    --background-rgb: 0, 0, 0;
   }
 
   .dark {
@@ -58,6 +60,9 @@
   body {
     @apply bg-background text-foreground;
     font-family: "Roboto", sans-serif;
+    background-color: var(--background);
+    background-color: #000000;
+    min-height: 100vh;
   }
   h1,
   h2,
@@ -67,6 +72,11 @@
   h6 {
     font-family: "Press Start 2P", cursive;
   }
+}
+
+html {
+  background-color: var(--background);
+  background-color: #000000;
 }
 
 .neon-text {
@@ -112,5 +122,12 @@
                0 0 10px #9D00FF,
                0 0 21px #9D00FF,
                0 0 42px #9D00FF;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --background-rgb: 0, 0, 0;
+  }
 }
 

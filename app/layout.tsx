@@ -6,6 +6,7 @@ import type { Metadata } from "next"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import ContactSection from "./components/ContactSection"
+import { BackgroundDebug } from './components/BackgroundDebug'
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -38,8 +39,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body className={cn("min-h-screen bg-background font-sans antialiased", inter.className)}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <body className={cn(
+        "min-h-screen bg-black", // Fallback color
+        "bg-background", // Your theme color
+        "dark:bg-black", // Dark mode explicit
+        inter.className
+      )}>
+        <BackgroundDebug />
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <Header />
           <main>{children}</main>
           <Footer />
