@@ -39,7 +39,7 @@ export default function Header() {
   }, [pathname])
 
   return (
-    <header className="bg-background p-4 md:p-6 sticky top-0 z-50 neon-border">
+    <header className="bg-background p-4 md:p-6 z-50 neon-border">
       <div className="container mx-auto flex justify-between items-center">
         <NeonSign />
         <nav className="hidden md:flex space-x-6">
