@@ -136,7 +136,7 @@ export default function ArcadeMenu() {
                 <h3 className="font-semibold">Quesadilla</h3>
                 <p className="text-sm text-muted-foreground">Cheddar & Monterey Jack cheeses</p>
               </div>
-              <span className="font-bold">$7.00</span>
+              <span className="font-bold">$7.50</span>
             </div>
             <div className="flex justify-between items-center">
               <div>
@@ -150,7 +150,7 @@ export default function ArcadeMenu() {
                 <h3 className="font-semibold">Grilled Cheese</h3>
                 <p className="text-sm text-muted-foreground">Texas toast sourdough bread buttered w/American cheese</p>
               </div>
-              <span className="font-bold">$7.00</span>
+              <span className="font-bold">$5.00</span>
             </div>
             <div className="flex justify-between items-center">
               <div>
@@ -266,19 +266,19 @@ export default function ArcadeMenu() {
               <div>
                 <h3 className="font-semibold">Yoohoo Chocolate Milk</h3>
               </div>
-              <span className="font-bold">$2.00</span>
+              <span className="font-bold">$1.50</span>
             </div>
             <div className="flex justify-between items-center">
               <div>
                 <h3 className="font-semibold">Apple Juice</h3>
               </div>
-              <span className="font-bold">$3.00</span>
+              <span className="font-bold">$2.50</span>
             </div>
             <div className="flex justify-between items-center">
               <div>
                 <h3 className="font-semibold">Coffee</h3>
               </div>
-              <span className="font-bold">$2.00</span>
+              <span className="font-bold">$3.00</span>
             </div>
             <div className="flex justify-between items-center">
               <div>
@@ -297,7 +297,7 @@ export default function ArcadeMenu() {
                 <h3 className="font-semibold">Soda</h3>
                 <p className="text-sm text-muted-foreground">Pepsi - Pepsi Zero - Root Beer - Lemonade - Dr. Pepper - Mt. Dew - Orange - Cherry</p>
               </div>
-              <span className="font-bold">$1.00</span>
+              <span className="font-bold">$3.00</span>
             </div>
             <div className="text-sm text-muted-foreground mt-4">
               (Refills on soda .50 - Tea 1.00)
