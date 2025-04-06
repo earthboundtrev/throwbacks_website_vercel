@@ -26,6 +26,15 @@ const teamMembers = [
 export default function AboutPage() {
   return (
     <div className="container mx-auto py-16">
+      <div className="flex justify-center mb-12">
+        <Image
+          src="https://pub-ffac2d7c13df4c70bc02719f375f929c.r2.dev/throwbacks_logo_larger.jpg"
+          alt="Throwbacks Arcade Logo"
+          width={800}
+          height={320}
+          priority
+        />
+      </div>
       <h1 className="text-4xl font-bold text-center mb-12 neon-text">About Us</h1>
       
       <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
