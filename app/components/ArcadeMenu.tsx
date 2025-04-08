@@ -190,56 +190,56 @@ export default function ArcadeMenu() {
             <div className="flex justify-between items-center">
               <div>
                 <h3 className="font-semibold">Hamburger</h3>
-                <p className="text-sm text-muted-foreground">Fresh & topped w/pickle, mayo, ketchup and mustard on a Brioche bun</p>
+                <p className="text-sm text-muted-foreground">Fresh & topped w/pickle, mayo, ketchup and mustard on a Brioche bun, fries</p>
               </div>
               <span className="font-bold">$10.00</span>
             </div>
             <div className="flex justify-between items-center">
               <div>
                 <h3 className="font-semibold">Cheeseburger</h3>
-                <p className="text-sm text-muted-foreground">Fresh & topped w/pickle, mayo, ketchup and mustard on a Brioche bun</p>
+                <p className="text-sm text-muted-foreground">Fresh & topped w/pickle, mayo, ketchup and mustard on a Brioche bun, fries</p>
               </div>
               <span className="font-bold">$11.00</span>
             </div>
             <div className="flex justify-between items-center">
               <div>
                 <h3 className="font-semibold">Bacon Cheeseburger</h3>
-                <p className="text-sm text-muted-foreground">Fresh & topped w/pickle, mayo, ketchup and mustard on a Brioche bun</p>
+                <p className="text-sm text-muted-foreground">Fresh & topped w/pickle, mayo, ketchup and mustard on a Brioche bun, fries</p>
               </div>
               <span className="font-bold">$12.00</span>
             </div>
             <div className="flex justify-between items-center">
               <div>
                 <h3 className="font-semibold">Grilled Chicken Sandwich</h3>
-                <p className="text-sm text-muted-foreground">Fresh & topped w/pickle, mayo, ketchup and mustard on a Brioche bun</p>
+                <p className="text-sm text-muted-foreground">Fresh & topped w/pickle, mayo, ketchup and mustard on a Brioche bun, fries</p>
               </div>
               <span className="font-bold">$9.00</span>
             </div>
             <div className="flex justify-between items-center">
               <div>
                 <h3 className="font-semibold">Grilled Blackened Chicken Sandwich</h3>
-                <p className="text-sm text-muted-foreground">Cajun seasoned breast topped w/pickle, honey mustard on a Brioche bun</p>
+                <p className="text-sm text-muted-foreground">Cajun seasoned breast topped w/pickle, honey mustard on a Brioche bun, fries</p>
               </div>
               <span className="font-bold">$9.00</span>
             </div>
             <div className="flex justify-between items-center">
               <div>
                 <h3 className="font-semibold">Fried Chicken Sandwich</h3>
-                <p className="text-sm text-muted-foreground">Fresh & topped w/pickle, mayo, or honey mustard on a Brioche bun</p>
+                <p className="text-sm text-muted-foreground">Fresh & topped w/pickle, mayo, or honey mustard on a Brioche bun, fries</p>
               </div>
               <span className="font-bold">$9.00</span>
             </div>
             <div className="flex justify-between items-center">
               <div>
                 <h3 className="font-semibold">Fried Buffalo Chicken Sandwich</h3>
-                <p className="text-sm text-muted-foreground">Fresh & topped w/pickle, buffalo sauce, and blue cheese on a Brioche bun</p>
+                <p className="text-sm text-muted-foreground">Fresh & topped w/pickle, buffalo sauce, and blue cheese on a Brioche bun, fries</p>
               </div>
               <span className="font-bold">$10.00</span>
             </div>
             <div className="flex justify-between items-center">
               <div>
                 <h3 className="font-semibold">Fried Chicken Parmesan Sandwich</h3>
-                <p className="text-sm text-muted-foreground">Fresh & topped with marinara sauce & provolone cheese on a Brioche bun</p>
+                <p className="text-sm text-muted-foreground">Fresh & topped with marinara sauce & provolone cheese on a Brioche bun, fries</p>
               </div>
               <span className="font-bold">$11.00</span>
             </div>
