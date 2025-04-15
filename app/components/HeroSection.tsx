@@ -37,7 +37,8 @@ export default function HeroSection() {
       <BackgroundImage />
       <div className="container relative z-10">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          Welcome to<br className="md:hidden" /> Throwbacks Arcade
+          <span className="inline md:inline">Welcome to</span>
+          <span className="block md:inline"> Throwbacks Arcade</span>
         </h1>
         <p className="text-xl mb-8">Step back in time to the golden age of gaming!</p>
         <div className="flex flex-col sm:flex-row gap-4">
