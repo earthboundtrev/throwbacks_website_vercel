@@ -124,6 +124,13 @@ html {
                0 0 42px #9D00FF;
 }
 
+.neon-text-blue {
+  text-shadow: 0 0 7px #00BFFF,
+               0 0 10px #00BFFF,
+               0 0 21px #00BFFF,
+               0 0 42px #00BFFF;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #000000;
