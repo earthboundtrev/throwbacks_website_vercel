@@ -14,8 +14,9 @@ export function EatSection() {
                 Step into our kitchen where classic arcade fare meet modern flavors! From our 
                 crispy chicken sandwiches and cheesy quesadillas to golden onion rings and 
                 fresh-baked pretzels, we're serving up the perfect fuel for your gaming adventures. 
-                Pair your meal with an ice-cold craft beer or your favorite soft drink, all made 
-                with the same love and attention to detail that we put into our arcade experience.
+                Wash it all down with our selection of craft beers, fine wines, and refreshing ciders, 
+                or grab your favorite soft drink. Every bite and sip is made with the same love and 
+                attention to detail that we put into our arcade experience.
               </p>
             </div>
             <div className="flex justify-center">

@@ -67,6 +67,8 @@ const ImagePaths = {
   FOOSBALL: 'foosball.jpg',
   ROCK_THE_RIM: 'rock-the-rim.jpg',
   SKEEBALL: 'skeeball.jpg',
+  SATINS_HOLLOW: 'satins-hollow.jpg',
+  SPY_HUNTER: 'spy-hunter.jpg',
 } as const;
 
 function getImageUrl(imagePath: string): string {
@@ -290,6 +292,18 @@ const games = [
     description: "Enhanced version of Street Fighter II with increased game speed and new moves.",
     year: 1993,
   },
+  {
+    name: "Satin's Hollow",
+    image: getImageUrl(ImagePaths.SATINS_HOLLOW),
+    description: "Classic arcade game featuring supernatural elements and challenging gameplay.",
+    year: 1981,
+  },
+  {
+    name: "Spy Hunter",
+    image: getImageUrl(ImagePaths.SPY_HUNTER),
+    description: "Drive a weaponized car through dangerous missions in this action-packed driving game.",
+    year: 1983,
+  },
 ].sort((a, b) => a.name.localeCompare(b.name))
 
 const pinballGames = [
@@ -477,6 +491,7 @@ export default function GamesPage() {
               {games.map((game) => (
                 <li 
                   key={game.name}
+                  onClick={() => setSelectedGame(game.name)}
                   className={`cursor-pointer hover:text-[#FF6B00] transition-colors duration-200 text-lg ${
                     selectedGame === game.name ? 'text-[#FF6B00]' : ''
                   }`}
@@ -531,6 +546,7 @@ export default function GamesPage() {
               {pinballGames.map((pinball) => (
                 <li 
                   key={pinball.name}
+                  onClick={() => setSelectedPinball(pinball.name)}
                   className={`cursor-pointer hover:text-[#B026FF] transition-colors duration-200 text-lg ${
                     selectedPinball === pinball.name ? 'text-[#B026FF]' : ''
                   }`}
@@ -580,11 +596,12 @@ export default function GamesPage() {
         {/* Redemption Games Section */}
         <div className="flex flex-col lg:flex-row gap-8" id="redemption-section">
           <div className="lg:w-1/3">
-            <h2 className="text-3xl font-bold mb-6 text-[#00BFFF] neon-text-blue">Redemption Games</h2>
+            <h2 className="text-3xl font-bold mb-6 neon-text-blue">Redemption Games</h2>
             <ul className="space-y-2">
               {redemptionGames.map((game) => (
                 <li 
                   key={game.name}
+                  onClick={() => setSelectedRedemption(game.name)}
                   className={`cursor-pointer hover:text-[#00BFFF] transition-colors duration-200 text-lg ${
                     selectedRedemption === game.name ? 'text-[#00BFFF]' : ''
                   }`}
