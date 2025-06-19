@@ -10,6 +10,7 @@ const IMAGE_CDN_URL = 'https://pub-ffac2d7c13df4c70bc02719f375f929c.r2.dev';
 const ImagePaths = {
   AREA51: 'area51.png',
   ASTEROIDS: 'asteroids.png',
+  BATTLEZONE: 'battlezone.png',
   BIG_BUCK_HUNT: 'big-buck-hunt.png',
   BURGER_TIME: 'burger-time.png',
   CENTIPEDE: 'centipede.png',
@@ -19,6 +20,7 @@ const ImagePaths = {
   FROGGER: 'frogger.png',
   GALAGA: 'galaga.png',
   GAUNTLET: 'gauntlet.jpg',
+  GYRUSS: 'gyruss.png',
   JOUST: 'joust.png',
   MARVEL_VS_SF: 'marvel-superheroes-vs-street-fighter.jpg',
   MAXIMUM_FORCE: 'maximum-force.jpg',
@@ -34,13 +36,18 @@ const ImagePaths = {
   QBERT: 'q-bert.png',
   RALLYX: 'rally-x.png',
   ROBOTRON: 'robotron.png',
+  SATINS_HOLLOW: 'satins-hollow.jpg',
   SEGA_SILVERSTRIPE: 'sega_silverstripe.png',
   SPACE_INVADERS: 'space-invaders.png',
+  SPY_HUNTER: 'spy-hunter.jpg',
   SUPER_BIKES_2: 'super-bikes-2.png',
+  TEKKEN_3: 'tekken-3.png',
   TEMPEST: 'tempest.png',
   TERMINATOR_SALVATION: 'terminator-salvation.png',
   TIME_PILOT: 'time-pilot.png',
   ULTIMATE_MK3: 'ultimate-mortal-kombat-III.jpg',
+  ULTRACADE: 'arcade-legends-ultracade.png',
+  VS_SUPER_MARIO_BROS: 'vs-super-mario-bros.png',
   RETURN_OF_JEDI: 'return-of-the-jedi.png',
   SF2_CHAMPION: 'street-fighter-II-champion-edition.png',
   SF2_TURBO: 'street-fighter-II-turbo.jpg',
@@ -50,10 +57,12 @@ const ImagePaths = {
   DND: 'dnd.png',
   GOT: 'game_of_thrones.png',
   GODZILLA: 'godzilla.jpg',
+  GODZILLA_PINBALL: 'godzilla-pinball.jpg',
   GUNS_N_ROSES: 'guns-n-roses.png',
   INDIANA_JONES: 'indiana-jones-pinball.jpg',
   JAWS: 'jaws-pinball.png',
   JURASSIC_PARK: 'jurassic-park-pinball.png',
+  KING_KONG: 'king-kong-pinball.jpg',
   LED_ZEPPELIN: 'led-zeppelin-pinball.jpg',
   STAR_WARS: 'star-wars-pinball.jpg',
   TERMINATOR_2: 'terminator-2-judgement-day.png',
@@ -67,8 +76,6 @@ const ImagePaths = {
   FOOSBALL: 'foosball.jpg',
   ROCK_THE_RIM: 'rock-the-rim.jpg',
   SKEEBALL: 'skeeball.jpg',
-  SATINS_HOLLOW: 'satins-hollow.jpg',
-  SPY_HUNTER: 'spy-hunter.jpg',
 } as const;
 
 function getImageUrl(imagePath: string): string {
@@ -76,6 +83,12 @@ function getImageUrl(imagePath: string): string {
 }
 
 const games = [
+  {
+    name: "Arcade Legends Ultracade",
+    image: getImageUrl(ImagePaths.ULTRACADE),
+    description: "Multi-game arcade cabinet featuring a collection of classic arcade titles.",
+    year: 2004,
+  },
   {
     name: "Asteroids",
     image: getImageUrl(ImagePaths.ASTEROIDS),
@@ -87,6 +100,12 @@ const games = [
     image: getImageUrl(ImagePaths.AREA51),
     description: "Light gun rail shooter featuring government conspiracies and aliens.",
     year: 1995,
+  },
+  {
+    name: "Battlezone",
+    image: getImageUrl(ImagePaths.BATTLEZONE),
+    description: "Vector graphics tank combat game with first-person perspective.",
+    year: 1980,
   },
   {
     name: "Big Buck Hunt",
@@ -141,6 +160,12 @@ const games = [
     image: getImageUrl(ImagePaths.GAUNTLET),
     description: "Fantasy-themed dungeon crawler with multiplayer action.",
     year: 1985,
+  },
+  {
+    name: "Gyruss",
+    image: getImageUrl(ImagePaths.GYRUSS),
+    description: "Space shooter with unique circular movement pattern and classical music soundtrack.",
+    year: 1983,
   },
   {
     name: "Joust",
@@ -233,6 +258,12 @@ const games = [
     year: 1982,
   },
   {
+    name: "Satin's Hollow",
+    image: getImageUrl(ImagePaths.SATINS_HOLLOW),
+    description: "Classic arcade game featuring supernatural elements and challenging gameplay.",
+    year: 1981,
+  },
+  {
     name: "Sega Silverstripe",
     image: getImageUrl(ImagePaths.SEGA_SILVERSTRIPE),
     description: "High-speed racing game with futuristic vehicles.",
@@ -245,10 +276,22 @@ const games = [
     year: 1978,
   },
   {
+    name: "Spy Hunter",
+    image: getImageUrl(ImagePaths.SPY_HUNTER),
+    description: "Drive a weaponized car through dangerous missions in this action-packed driving game.",
+    year: 1983,
+  },
+  {
     name: "Super Bikes 2",
     image: getImageUrl(ImagePaths.SUPER_BIKES_2),
     description: "Motorcycle racing game with realistic physics.",
     year: 2010,
+  },
+  {
+    name: "Tekken 3",
+    image: getImageUrl(ImagePaths.TEKKEN_3),
+    description: "3D fighting game featuring martial arts combat and diverse character roster.",
+    year: 1997,
   },
   {
     name: "Tempest",
@@ -275,6 +318,12 @@ const games = [
     year: 1995,
   },
   {
+    name: "VS Super Mario Bros",
+    image: getImageUrl(ImagePaths.VS_SUPER_MARIO_BROS),
+    description: "Arcade version of the classic Super Mario Bros with enhanced graphics and gameplay.",
+    year: 1986,
+  },
+  {
     name: "Return of the Jedi",
     image: getImageUrl(ImagePaths.RETURN_OF_JEDI),
     description: "Star Wars arcade game based on Episode VI.",
@@ -291,18 +340,6 @@ const games = [
     image: getImageUrl(ImagePaths.SF2_TURBO),
     description: "Enhanced version of Street Fighter II with increased game speed and new moves.",
     year: 1993,
-  },
-  {
-    name: "Satin's Hollow",
-    image: getImageUrl(ImagePaths.SATINS_HOLLOW),
-    description: "Classic arcade game featuring supernatural elements and challenging gameplay.",
-    year: 1981,
-  },
-  {
-    name: "Spy Hunter",
-    image: getImageUrl(ImagePaths.SPY_HUNTER),
-    description: "Drive a weaponized car through dangerous missions in this action-packed driving game.",
-    year: 1983,
   },
 ].sort((a, b) => a.name.localeCompare(b.name))
 
@@ -333,9 +370,9 @@ const pinballGames = [
   },
   {
     name: "Godzilla",
-    image: getImageUrl(ImagePaths.GODZILLA),
-    description: "Monster-themed pinball featuring the King of Monsters.",
-    year: 2022,
+    image: getImageUrl(ImagePaths.GODZILLA_PINBALL),
+    description: "Monster-themed pinball featuring the King of Monsters with city-destroying gameplay.",
+    year: 2021,
   },
   {
     name: "Guns N' Roses",
@@ -360,6 +397,12 @@ const pinballGames = [
     image: getImageUrl(ImagePaths.JURASSIC_PARK),
     description: "Dinosaur themed pinball based on the blockbuster movie.",
     year: 1993,
+  },
+  {
+    name: "King Kong",
+    image: getImageUrl(ImagePaths.KING_KONG),
+    description: "Based on the classic monster movie featuring the giant ape and city destruction themes.",
+    year: 1990,
   },
   {
     name: "Led Zeppelin",

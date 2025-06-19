@@ -8,7 +8,7 @@ export default function EventsPage() {
     <div className="container mx-auto py-16">
       <h1 className="text-4xl font-bold text-center mb-4 neon-text">Our Events</h1>
       <p className="text-center text-muted-foreground mb-8">
-        Check out our upcoming events! Follow us on{" "}
+        Check out our upcoming events! Follow us on our{" "}
         <a 
           href="https://www.facebook.com/profile.php?id=61556280427238"
           target="_blank"
@@ -17,7 +17,16 @@ export default function EventsPage() {
         >
           Facebook
         </a>
-        {" "}for the latest arcade happenings!
+        {" "}and{" "}
+        <a 
+          href="https://www.instagram.com/throwbacksculpeper/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:underline"
+        >
+          Instagram
+        </a>
+        {" "}accounts for the latest arcade happenings!
       </p>
       <ContactSection />
     </div>
