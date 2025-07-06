@@ -6,8 +6,72 @@ export default function ArcadeMenu() {
   return (
     <div className="container mx-auto py-12">
       <h1 className="text-4xl md:text-6xl font-bold mb-8">Menu</h1>
+      <p className="text-muted-foreground text-center mb-8 italic">
+        Our menu is constantly evolving! We regularly add new items and rotate specials, so there's always something new to try.
+      </p>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Specials Section */}
+        <section className="bg-background/50 p-6 rounded-lg shadow-lg border-2 border-primary/20">
+          <h2 className="text-2xl font-bold mb-4 text-primary">Specials</h2>
+          <div className="space-y-4">
+            <div className="flex justify-between items-center">
+              <div>
+                <h3 className="font-semibold">Buffalo Chicken Egg Rolls</h3>
+              </div>
+              <span className="font-bold">$9.00</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <div>
+                <h3 className="font-semibold">Pizzadilla</h3>
+              </div>
+              <span className="font-bold">$7.50</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <div>
+                <h3 className="font-semibold">3 Meatballs</h3>
+              </div>
+              <span className="font-bold">$9.00</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <div>
+                <h3 className="font-semibold">Meatball Sliders</h3>
+              </div>
+              <span className="font-bold">$10.99</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <div>
+                <h3 className="font-semibold">Cookie Monster Ice Cream Sandwiches</h3>
+              </div>
+              <span className="font-bold">$7.50</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <div>
+                <h3 className="font-semibold">Choco Blackout Ice Cream Sandwiches</h3>
+              </div>
+              <span className="font-bold">$7.50</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <div>
+                <h3 className="font-semibold">Churros w/Chocolate & Caramel Sauce</h3>
+              </div>
+              <span className="font-bold">$8.50</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <div>
+                <h3 className="font-semibold">Steak Quesadilla</h3>
+              </div>
+              <span className="font-bold">$8.50</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <div>
+                <h3 className="font-semibold">Hot Honey Chicken Sandwiches w/bacon & Pepperjack Cheese</h3>
+              </div>
+              <span className="font-bold">$12.00</span>
+            </div>
+          </div>
+        </section>
+
         {/* Snacks and Appetizers Section */}
         <section className="bg-background/50 p-6 rounded-lg shadow-lg">
           <h2 className="text-2xl font-bold mb-4 text-primary">Snacks and Appetizers</h2>
