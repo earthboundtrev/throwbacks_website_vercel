@@ -17,7 +17,7 @@ export default function Footer() {
               <p>Thursday: 4:00 PM - 9:00 PM</p>
               <p>Friday: 12:00 PM - 11:00 PM</p>
               <p>Saturday: 12:00 PM - 11:00 PM</p>
-              <p>Sunday: 12:00 PM - 6:00 PM</p>
+              <p>Sunday: 12:00 PM - 7:00 PM</p>
             </div>
             <p className="text-sm">© 2025 Throwbacks Arcade</p>
           </div>
