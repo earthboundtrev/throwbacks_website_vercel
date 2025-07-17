@@ -17,7 +17,7 @@ export default function ArcadeMenu() {
     <div className="container mx-auto py-12">
       <h1 className="text-4xl md:text-6xl font-bold mb-8">Menu</h1>
       <p className="text-muted-foreground text-center mb-8 italic">
-        Our menu is constantly evolving! We regularly add new items and rotate specials, so there's always something new to try.
+        Our menu is constantly evolving! We regularly add new items and rotate specials, so there's always something new to try. Click on the menu images below to zoom in and see all the details.
       </p>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
