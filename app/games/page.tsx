@@ -45,6 +45,7 @@ const ImagePaths = {
   TEMPEST: 'tempest.png',
   TERMINATOR_SALVATION: 'terminator-salvation.png',
   TIME_PILOT: 'time-pilot.png',
+  TRACK_AND_FIELD: 'track-and-field.png',
   ULTIMATE_MK3: 'ultimate-mortal-kombat-III.jpg',
   ULTRACADE: 'arcade-legends-ultracade.png',
   VS_SUPER_MARIO_BROS: 'vs-super-mario-bros.png',
@@ -310,6 +311,12 @@ const games = [
     image: getImageUrl(ImagePaths.TIME_PILOT),
     description: "Time-traveling aerial combat game.",
     year: 1982,
+  },
+  {
+    name: "Track & Field",
+    image: getImageUrl(ImagePaths.TRACK_AND_FIELD),
+    description: "Sports simulation game featuring various track and field events including running, long jump, javelin throw, and more.",
+    year: 1983,
   },
   {
     name: "Ultimate Mortal Kombat 3",
