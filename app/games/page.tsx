@@ -40,6 +40,7 @@ const ImagePaths = {
   SEGA_SILVERSTRIPE: 'sega_silverstripe.png',
   SPACE_INVADERS: 'space-invaders.png',
   SPY_HUNTER: 'spy-hunter.jpg',
+  STARGATE: 'stargate.png',
   SUPER_BIKES_2: 'super-bikes-2.png',
   TEKKEN_3: 'tekken-3.png',
   TEMPEST: 'tempest.png',
@@ -281,6 +282,12 @@ const games = [
     image: getImageUrl(ImagePaths.SPY_HUNTER),
     description: "Drive a weaponized car through dangerous missions in this action-packed driving game.",
     year: 1983,
+  },
+  {
+    name: "Stargate",
+    image: getImageUrl(ImagePaths.STARGATE),
+    description: "Light gun shooter based on the popular TV series.",
+    year: 1994,
   },
   {
     name: "Super Bikes 2",
