@@ -30,7 +30,7 @@ export default function ArcadeMenu() {
             className="w-full h-auto rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
             onClick={() => openModal("https://pub-ffac2d7c13df4c70bc02719f375f929c.r2.dev/throwbacks_food_menu_1.jpg")}
           />
-        </div>
+          </div>
 
         {/* Drink Menu */}
         <div className="bg-background/50 p-6 rounded-lg shadow-lg">
@@ -41,8 +41,8 @@ export default function ArcadeMenu() {
             className="w-full h-auto rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
             onClick={() => openModal("https://pub-ffac2d7c13df4c70bc02719f375f929c.r2.dev/throwbacks_drink_menu_1.jpg")}
           />
-        </div>
-      </div>
+            </div>
+          </div>
 
       {/* Modal */}
       {selectedImage && (
@@ -65,7 +65,7 @@ export default function ArcadeMenu() {
               onClick={(e) => e.stopPropagation()}
             />
           </div>
-        </div>
+      </div>
       )}
     </div>
   )

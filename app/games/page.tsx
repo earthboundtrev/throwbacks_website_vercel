@@ -503,9 +503,6 @@ const redemptionGames = [
 ].sort((a, b) => a.name.localeCompare(b.name))
 
 export default function GamesPage() {
-  const [selectedGame, setSelectedGame] = useState<string | null>(null)
-  const [selectedPinball, setSelectedPinball] = useState<string | null>(null)
-  const [selectedRedemption, setSelectedRedemption] = useState<string | null>(null)
   const [activeSection, setActiveSection] = useState<'videogames' | 'pinball' | 'redemption'>('videogames')
 
   const scrollToSection = (section: 'videogames' | 'pinball' | 'redemption') => {
@@ -549,46 +546,18 @@ export default function GamesPage() {
       <div className="space-y-16">
         {/* Videogames Section */}
         <div className="flex flex-col lg:flex-row gap-8" id="videogames-section">
-          <div className="lg:w-1/3">
+          <div className="lg:w-full">
             <h2 className="text-3xl font-bold mb-6 neon-text-orange">Videogames</h2>
             <ul className="space-y-2">
               {games.map((game) => (
                 <li 
                   key={game.name}
-                  onClick={() => setSelectedGame(game.name)}
-                  className={`cursor-pointer hover:text-[#FF6B00] transition-colors duration-200 text-lg ${
-                    selectedGame === game.name ? 'text-[#FF6B00]' : ''
-                  }`}
+                  className="text-lg"
                 >
                   {game.name}
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div className="lg:w-2/3">
-            {selectedGame && (
-              <Card className="bg-card text-card-foreground neon-border pixel-corners">
-                <CardHeader>
-                  <Image
-                    src={games.find(g => g.name === selectedGame)?.image || "/placeholder.svg"}
-                    alt={selectedGame}
-                    width={300}
-                    height={400}
-                    className="w-full h-48 object-cover rounded-t-lg"
-                  />
-                </CardHeader>
-                <CardContent>
-                  <CardTitle className="text-2xl mb-2 text-primary">{selectedGame}</CardTitle>
-                  <CardDescription className="text-muted-foreground mb-4">
-                    Released: {games.find(g => g.name === selectedGame)?.year}
-                  </CardDescription>
-                  <p className="mb-4 text-muted-foreground">
-                    {games.find(g => g.name === selectedGame)?.description}
-                  </p>
-                </CardContent>
-              </Card>
-            )}
           </div>
         </div>
 
@@ -604,46 +573,18 @@ export default function GamesPage() {
 
         {/* Pinball Section */}
         <div className="flex flex-col lg:flex-row gap-8" id="pinball-section">
-          <div className="lg:w-1/3">
+          <div className="lg:w-full">
             <h2 className="text-3xl font-bold mb-6 text-[#B026FF] neon-text-purple">Pinball</h2>
             <ul className="space-y-2">
               {pinballGames.map((pinball) => (
                 <li 
                   key={pinball.name}
-                  onClick={() => setSelectedPinball(pinball.name)}
-                  className={`cursor-pointer hover:text-[#B026FF] transition-colors duration-200 text-lg ${
-                    selectedPinball === pinball.name ? 'text-[#B026FF]' : ''
-                  }`}
+                  className="text-lg"
                 >
                   {pinball.name}
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div className="lg:w-2/3">
-            {selectedPinball && (
-              <Card className="bg-card text-card-foreground neon-border pixel-corners">
-                <CardHeader>
-                  <Image
-                    src={pinballGames.find(p => p.name === selectedPinball)?.image || "/placeholder.svg"}
-                    alt={selectedPinball}
-                    width={300}
-                    height={400}
-                    className="w-full h-48 object-cover rounded-t-lg"
-                  />
-                </CardHeader>
-                <CardContent>
-                  <CardTitle className="text-2xl mb-2 text-primary">{selectedPinball}</CardTitle>
-                  <CardDescription className="text-muted-foreground mb-4">
-                    Released: {pinballGames.find(p => p.name === selectedPinball)?.year}
-                  </CardDescription>
-                  <p className="mb-4 text-muted-foreground">
-                    {pinballGames.find(p => p.name === selectedPinball)?.description}
-                  </p>
-                </CardContent>
-              </Card>
-            )}
           </div>
         </div>
 
@@ -659,43 +600,18 @@ export default function GamesPage() {
 
         {/* Redemption Games Section */}
         <div className="flex flex-col lg:flex-row gap-8" id="redemption-section">
-          <div className="lg:w-1/3">
+          <div className="lg:w-full">
             <h2 className="text-3xl font-bold mb-6 neon-text-blue">Redemption Games</h2>
             <ul className="space-y-2">
               {redemptionGames.map((game) => (
                 <li 
                   key={game.name}
-                  onClick={() => setSelectedRedemption(game.name)}
-                  className={`cursor-pointer hover:text-[#00BFFF] transition-colors duration-200 text-lg ${
-                    selectedRedemption === game.name ? 'text-[#00BFFF]' : ''
-                  }`}
+                  className="text-lg"
                 >
                   {game.name}
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div className="lg:w-2/3">
-            {selectedRedemption && (
-              <Card className="bg-card text-card-foreground neon-border pixel-corners">
-                <CardHeader>
-                  <Image
-                    src={redemptionGames.find(g => g.name === selectedRedemption)?.image || "/placeholder.svg"}
-                    alt={selectedRedemption}
-                    width={300}
-                    height={400}
-                    className="w-full h-48 object-cover rounded-t-lg"
-                  />
-                </CardHeader>
-                <CardContent>
-                  <CardTitle className="text-2xl mb-2 text-primary">{selectedRedemption}</CardTitle>
-                  <p className="mb-4 text-muted-foreground">
-                    {redemptionGames.find(g => g.name === selectedRedemption)?.description}
-                  </p>
-                </CardContent>
-              </Card>
-            )}
           </div>
         </div>
 
