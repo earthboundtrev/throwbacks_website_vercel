@@ -46,6 +46,7 @@ const ImagePaths = {
   TEMPEST: 'tempest.png',
   TERMINATOR_SALVATION: 'terminator-salvation.png',
   TIME_PILOT: 'time-pilot.png',
+  TMNT: 'tmnt.png',
   TRACK_AND_FIELD: 'track-and-field.png',
   ULTIMATE_MK3: 'ultimate-mortal-kombat-III.jpg',
   ULTRACADE: 'arcade-legends-ultracade.png',
@@ -354,6 +355,12 @@ const games = [
     image: getImageUrl(ImagePaths.SF2_TURBO),
     description: "Enhanced version of Street Fighter II with increased game speed and new moves.",
     year: 1993,
+  },
+  {
+    name: "Teenage Mutant Ninja Turtles",
+    image: getImageUrl(ImagePaths.TMNT),
+    description: "Classic Konami beat 'em up arcade game featuring the four ninja turtles fighting through New York City to rescue April O'Neil and defeat the Foot Clan.",
+    year: 1989,
   },
 ].sort((a, b) => a.name.localeCompare(b.name))
 
