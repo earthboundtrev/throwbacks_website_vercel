@@ -14,6 +14,7 @@ const ImagePaths = {
   BIG_BUCK_HUNT: 'big-buck-hunt.png',
   BURGER_TIME: 'burger-time.png',
   CENTIPEDE: 'centipede.png',
+  DDR_EXTREME: 'dance-dance-revolution-extreme.png',
   DEFENDER: 'defender.png',
   DONKEY_KONG: 'donkey-kong.png',
   DONKEY_KONG_JR: 'donkey-kong-junior.png',
@@ -127,6 +128,12 @@ const games = [
     image: getImageUrl(ImagePaths.CENTIPEDE),
     description: "Shoot segments of a descending centipede in this classic shooter.",
     year: 1981,
+  },
+  {
+    name: "Dance Dance Revolution Extreme",
+    image: getImageUrl(ImagePaths.DDR_EXTREME),
+    description: "Rhythm-based dancing game where players step on arrows in time with music.",
+    year: 2002,
   },
   {
     name: "Defender",
