@@ -21,6 +21,7 @@ const ImagePaths = {
   FROGGER: 'frogger.png',
   GALAGA: 'galaga.png',
   GAUNTLET: 'gauntlet.jpg',
+  GORF: 'gorf.png',
   GYRUSS: 'gyruss.png',
   JOUST: 'joust.png',
   MARVEL_VS_SF: 'marvel-superheroes-vs-street-fighter.jpg',
@@ -170,6 +171,12 @@ const games = [
     image: getImageUrl(ImagePaths.GAUNTLET),
     description: "Fantasy-themed dungeon crawler with multiplayer action.",
     year: 1985,
+  },
+  {
+    name: "Gorf",
+    image: getImageUrl(ImagePaths.GORF),
+    description: "Space shooter featuring five different game modes and robotic voice commentary.",
+    year: 1981,
   },
   {
     name: "Gyruss",
