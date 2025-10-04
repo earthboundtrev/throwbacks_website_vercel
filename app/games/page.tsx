@@ -533,6 +533,9 @@ export default function GamesPage() {
   return (
     <div className="container mx-auto py-16">
       <h1 className="text-4xl font-bold text-center mb-8 neon-text">Our Arcade Collection</h1>
+      <p className="text-muted-foreground text-center mb-8 italic">
+        Our game collection is constantly evolving! We regularly add new games and rotate our lineup, so there's always something new to discover. Check back often to see what's new!
+      </p>
       
       <div className="text-2xl text-center mb-12">
         <span 
