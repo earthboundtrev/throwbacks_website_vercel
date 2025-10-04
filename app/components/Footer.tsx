@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { FaFacebook, FaGamepad, FaInstagram } from 'react-icons/fa'
+import { FaFacebook, FaGamepad, FaInstagram, FaTiktok } from 'react-icons/fa'
 
 export default function Footer() {
   return (
@@ -71,6 +71,15 @@ export default function Footer() {
               >
                 <FaInstagram className="w-5 h-5" />
                 <span>Instagram</span>
+              </a>
+              <a 
+                href="https://www.tiktok.com/@throwbacks_arcade"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm hover:text-primary flex items-center space-x-2"
+              >
+                <FaTiktok className="w-5 h-5" />
+                <span>TikTok</span>
               </a>
               <a 
                 href="http://www.vacoinop.com/"

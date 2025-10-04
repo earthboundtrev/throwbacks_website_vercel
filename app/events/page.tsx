@@ -26,6 +26,15 @@ export default function EventsPage() {
         >
           Instagram
         </a>
+        {" "}and{" "}
+        <a 
+          href="https://www.tiktok.com/@throwbacks_arcade"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:underline"
+        >
+          TikTok
+        </a>
         {" "}accounts for the latest arcade happenings!
       </p>
       <ContactSection />
