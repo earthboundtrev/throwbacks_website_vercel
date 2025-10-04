@@ -167,7 +167,7 @@ const games = [
     year: 1981,
   },
   {
-    name: "Gauntlet",
+    name: "Gauntlet (rare 2-player version, only 500 created!)",
     image: getImageUrl(ImagePaths.GAUNTLET),
     description: "Fantasy-themed dungeon crawler with multiplayer action.",
     year: 1985,
