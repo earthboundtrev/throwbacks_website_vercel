@@ -37,6 +37,7 @@ const ImagePaths = {
   PHOENIX: 'phoenix.png',
   QBERT: 'q-bert.png',
   RALLYX: 'rally-x.png',
+  ROAD_BLASTER: 'road-blaster.png',
   ROBOTRON: 'robotron.png',
   SATINS_HOLLOW: 'satins-hollow.jpg',
   SEGA_SILVERSTRIPE: 'sega_silverstripe.png',
@@ -267,6 +268,12 @@ const games = [
     image: getImageUrl(ImagePaths.RALLYX),
     description: "Drive through a maze collecting flags while avoiding enemies.",
     year: 1980,
+  },
+  {
+    name: "Road Blaster",
+    image: getImageUrl(ImagePaths.ROAD_BLASTER),
+    description: "LaserDisc arcade game featuring interactive movie gameplay with high-speed driving action.",
+    year: 1987,
   },
   {
     name: "Robotron",
