@@ -11,6 +11,7 @@ const ImagePaths = {
   AREA51: 'area51.png',
   ASTEROIDS: 'asteroids.png',
   BATTLEZONE: 'battlezone.png',
+  BERZERK: 'berzerk.png',
   BIG_BUCK_HUNT: 'big-buck-hunt.png',
   BURGER_TIME: 'burger-time.png',
   CENTIPEDE: 'centipede.png',
@@ -71,6 +72,7 @@ const ImagePaths = {
   KING_KONG: 'king-kong-pinball.jpg',
   LED_ZEPPELIN: 'led-zeppelin-pinball.jpg',
   STAR_WARS: 'star-wars-pinball.jpg',
+  STAR_WARS_FALL_EMPIRE: 'star-wars-fall-of-the-empire-pinball.jpg',
   TERMINATOR_2: 'terminator-2-judgement-day.png',
   MUNSTERS: 'the-munsters-pinball.jpg',
   THEATRE_MAGIC: 'theatre-of-magic-pinball.jpg',
@@ -111,6 +113,12 @@ const games = [
     name: "Battlezone",
     image: getImageUrl(ImagePaths.BATTLEZONE),
     description: "Vector graphics tank combat game with first-person perspective.",
+    year: 1980,
+  },
+  {
+    name: "Berzerk",
+    image: getImageUrl(ImagePaths.BERZERK),
+    description: "Survive waves of hostile robots in maze-like rooms while avoiding Evil Otto.",
     year: 1980,
   },
   {
@@ -463,6 +471,12 @@ const pinballGames = [
     image: getImageUrl(ImagePaths.STAR_WARS),
     description: "Based on the original Star Wars trilogy.",
     year: 1992,
+  },
+  {
+    name: "Star Wars: Fall of the Empire",
+    image: getImageUrl(ImagePaths.STAR_WARS_FALL_EMPIRE),
+    description: "Star Wars themed pinball featuring epic battles and immersive gameplay.",
+    year: 2024,
   },
   {
     name: "Terminator 2: Judgement Day",
