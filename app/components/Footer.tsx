@@ -10,16 +10,33 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:justify-between items-center md:items-start">
           {/* Hours and Copyright - Left Column */}
           <div className="mb-8 md:mb-0">
-            <h3 className="text-sm font-semibold mb-4">Store Hours</h3>
-            <div className="text-sm space-y-1 mb-6">
-              <p>Monday - Tuesday: Closed</p>
-              <p>Wednesday: 5:00 PM - 9:00 PM</p>
-              <p>Thursday: 5:00 PM - 9:00 PM</p>
-              <p>Friday: 4:00 PM - 11:00 PM</p>
-              <p>Saturday: 12:00 PM - 11:00 PM</p>
-              <p>Sunday: 12:00 PM - 7:00 PM</p>
+            <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+              {/* Regular Store Hours */}
+              <div>
+                <h3 className="text-sm font-semibold mb-4">Store Hours</h3>
+                <div className="text-sm space-y-1">
+                  <p>Monday - Tuesday: Closed</p>
+                  <p>Wednesday: 5:00 PM - 9:00 PM</p>
+                  <p>Thursday: 5:00 PM - 9:00 PM</p>
+                  <p>Friday: 4:00 PM - 11:00 PM</p>
+                  <p>Saturday: 12:00 PM - 11:00 PM</p>
+                  <p>Sunday: 12:00 PM - 7:00 PM</p>
+                </div>
+              </div>
+              
+              {/* Thanksgiving Holiday Hours */}
+              <div className="md:border-l md:pl-6 md:border-border">
+                <h3 className="text-sm font-semibold mb-4 text-primary">Thanksgiving Holiday Hours</h3>
+                <div className="text-sm space-y-1">
+                  <p>Wednesday, Nov 26: 12:00 PM - 11:00 PM</p>
+                  <p>Thursday, Nov 27 (Thanksgiving): Closed</p>
+                  <p>Friday, Nov 28: 12:00 PM - 11:00 PM</p>
+                  <p>Saturday, Nov 29: 12:00 PM - 12:00 AM <span className="text-primary">('80s Prom Party)</span></p>
+                  <p>Sunday, Nov 30: 12:00 PM - 7:00 PM</p>
+                </div>
+              </div>
             </div>
-            <p className="text-sm">© 2025 Throwbacks Arcade</p>
+            <p className="text-sm mt-6">© 2025 Throwbacks Arcade</p>
           </div>
 
           {/* Quick Links - Center Column */}

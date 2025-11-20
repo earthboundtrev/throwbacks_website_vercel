@@ -1,18 +1,14 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { MapPin, Phone, Mail } from "lucide-react"
 import emailjs from '@emailjs/browser'
-import ReCAPTCHA from "react-google-recaptcha"
 
 export default function ContactSection() {
-  const recaptchaRef = useRef<ReCAPTCHA>(null)
-  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null)
-  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -60,18 +56,8 @@ export default function ContactSection() {
     setErrors(prev => ({ ...prev, [name]: false }));
   }
 
-  const handleRecaptchaChange = (token: string | null) => {
-    setRecaptchaToken(token);
-  }
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Check reCAPTCHA first
-    if (!recaptchaToken) {
-      alert('Please complete the reCAPTCHA verification.');
-      return;
-    }
     
     const newErrors = {
       name: !formData.name.trim(),
@@ -120,8 +106,6 @@ export default function ContactSection() {
       );
       console.log('EmailJS Response:', response);
       setFormData({ name: '', email: '', message: '', phone: '' });
-      setRecaptchaToken(null);
-      recaptchaRef.current?.reset();
       alert('Message sent successfully!');
     } catch (error) {
       console.error('EmailJS Error Details:', error);
@@ -208,13 +192,6 @@ export default function ContactSection() {
                     errors.message ? 'border-red-500' : ''
                   }`}
                   rows={4}
-                />
-              </div>
-              <div className="mb-4 flex justify-center">
-                <ReCAPTCHA
-                  ref={recaptchaRef}
-                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
-                  onChange={handleRecaptchaChange}
                 />
               </div>
               <Button type="submit" className="w-full bg-secondary hover:bg-secondary/80 text-white">
