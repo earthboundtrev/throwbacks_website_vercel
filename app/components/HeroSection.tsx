@@ -6,12 +6,12 @@ import { Button } from "@/components/ui/button"
 import Link from 'next/link'
 
 const BackgroundImage = () => (
-  <div className="absolute inset-0 z-0 opacity-20">
+  <div className="absolute inset-0 z-0 opacity-40">
     <div
       className="w-full h-full bg-center bg-cover bg-no-repeat"
       style={{
         backgroundImage: `url("https://pub-ffac2d7c13df4c70bc02719f375f929c.r2.dev/throwbacks_daytime.jpg")`,
-        filter: 'brightness(0.9)',
+        filter: 'brightness(1.1)',
       }}
     ></div>
   </div>
