@@ -24,8 +24,8 @@ export default function Footer() {
                 </div>
               </div>
               
-              {/* Thanksgiving Holiday Hours */}
-              <div className="md:border-l md:pl-6 md:border-border">
+              {/* Thanksgiving Holiday Hours - Commented out for future December hours scaffolding */}
+              {/* <div className="md:border-l md:pl-6 md:border-border">
                 <h3 className="text-sm font-semibold mb-4 text-primary">Thanksgiving Holiday Hours</h3>
                 <div className="text-sm space-y-1">
                   <p>Wednesday, Nov 26: 12:00 PM - 11:00 PM</p>
@@ -34,7 +34,7 @@ export default function Footer() {
                   <p>Saturday, Nov 29: 12:00 PM - 12:00 AM <span className="text-primary">('80s Prom Party)</span></p>
                   <p>Sunday, Nov 30: 12:00 PM - 7:00 PM</p>
                 </div>
-              </div>
+              </div> */}
             </div>
             <p className="text-sm mt-6">© 2025 Throwbacks Arcade</p>
           </div>
