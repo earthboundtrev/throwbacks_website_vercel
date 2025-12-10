@@ -35,8 +35,52 @@ export default function Footer() {
                   <p>Sunday, Nov 30: 12:00 PM - 7:00 PM</p>
                 </div>
               </div> */}
+
+              {/* Holiday Hours */}
+              <div className="md:border-l md:pl-6 md:border-border">
+                <h3 className="text-sm font-semibold mb-4 text-primary">Holiday Hours</h3>
+                <div className="text-sm space-y-1">
+                  <p>Friday December 19th noon-11pm</p>
+                  <p></p>
+                  <p>Saturday December 20th noon-12pm</p>
+                  <p></p>
+                  <p>(Ugly Christmas Sweater Party 8-11 w/DJ Paid Cash)</p>
+                  <p></p>
+                  <p>Sunday December 21st noon-8pm</p>
+                  <p></p>
+                  <p>Monday December 22nd noon-10pm</p>
+                  <p></p>
+                  <p>Tuesday December 23rd noon-10pm</p>
+                  <p></p>
+                  <p>Wednesday December 24th (Christmas Eve) 1pm-6pm</p>
+                  <p></p>
+                  <p>Thursday December 25th (Christmas closed)</p>
+                  <p></p>
+                  <p>Friday December 26th noon-11pm</p>
+                  <p></p>
+                  <p>Saturday December 27th noon-11pm</p>
+                  <p></p>
+                  <p>Sunday December 28th noon-8pm</p>
+                  <p></p>
+                  <p>Monday December 29th noon-9pm</p>
+                  <p></p>
+                  <p>Tuesday December 30th noon-9pm</p>
+                  <p></p>
+                  <p>Wednesday December 31st NYE OPEN noon-1am (NYE party 7pm to 1am) with DJ Paid Cash.</p>
+                  <p></p>
+                  <p>Thursday January 1st OPEN (New Year's Day) noon-10pm</p>
+                  <p></p>
+                  <p>Friday January 2nd noon-11pm</p>
+                  <p></p>
+                  <p>Saturday January 3rd noon-11pm</p>
+                  <p></p>
+                  <p>Sunday January 4th noon-8pm</p>
+                  <p></p>
+                  <p>Monday January 5th noon-8pm</p>
+                </div>
+              </div>
             </div>
-            <p className="text-sm mt-6">© 2025 Throwbacks Arcade</p>
+            <p className="text-sm mt-6 hidden md:block">© 2025 Throwbacks Arcade</p>
           </div>
 
           {/* Quick Links - Center Column */}
@@ -110,6 +154,8 @@ export default function Footer() {
             </div>
           </div>
         </div>
+        {/* Copyright - Bottom on mobile, hidden on desktop (shown in left column) */}
+        <p className="text-sm mt-6 text-center md:hidden">© 2025 Throwbacks Arcade</p>
       </div>
     </footer>
   )
