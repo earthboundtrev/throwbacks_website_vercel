@@ -16,25 +16,26 @@ export default function Footer() {
                 <h3 className="text-sm font-semibold mb-4">Store Hours</h3>
                 <div className="text-sm space-y-1">
                   <p>Monday - Tuesday: Closed</p>
-                  <p>Wednesday: 5:00 PM - 9:00 PM</p>
-                  <p>Thursday: 5:00 PM - 9:00 PM</p>
+                  <p>Wednesday: 4:00 PM - 9:00 PM</p>
+                  <p>Thursday: 4:00 PM - 9:00 PM</p>
                   <p>Friday: 4:00 PM - 11:00 PM</p>
                   <p>Saturday: 12:00 PM - 11:00 PM</p>
                   <p>Sunday: 12:00 PM - 7:00 PM</p>
                 </div>
               </div>
-              
-              {/* Thanksgiving Holiday Hours - Commented out for future December hours scaffolding */}
-              {/* <div className="md:border-l md:pl-6 md:border-border">
-                <h3 className="text-sm font-semibold mb-4 text-primary">Thanksgiving Holiday Hours</h3>
+
+              {/* Holiday Hours - St. Patrick's Day */}
+              <div className="md:border-l md:pl-6 md:border-border">
+                <h3 className="text-sm font-semibold mb-4 text-primary">St. Patrick&apos;s Day Hours &amp; Specials</h3>
                 <div className="text-sm space-y-1">
-                  <p>Wednesday, Nov 26: 12:00 PM - 11:00 PM</p>
-                  <p>Thursday, Nov 27 (Thanksgiving): Closed</p>
-                  <p>Friday, Nov 28: 12:00 PM - 11:00 PM</p>
-                  <p>Saturday, Nov 29: 12:00 PM - 12:00 AM <span className="text-primary">('80s Prom Party)</span></p>
-                  <p>Sunday, Nov 30: 12:00 PM - 7:00 PM</p>
+                  <p>Tuesday, Mar 17 (St. Patrick&apos;s Day): 4:00 PM - 9:00 PM</p>
+                  <p>
+                    <Link href="/events" className="text-primary underline hover:no-underline">
+                      Admission and food specials all day!
+                    </Link>
+                  </p>
                 </div>
-              </div> */}
+              </div>
 
             </div>
             <p className="text-sm mt-6 hidden md:block">© 2025 Throwbacks Arcade</p>
