@@ -53,13 +53,15 @@ export default function EventsPage() {
               allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
             />
           </div>
-          <div className="text-left text-sm leading-relaxed space-y-3">
+          <div className="text-left text-sm leading-relaxed space-y-4">
             <p className="font-medium">
-              This Wednesday, March 18th starting @ 4:30 PM. Admission is only $10 today.
+              $10 admission tonight only, plus our Ultimate Smashbros tournament that starts at 4:30 pm hosted by Matt Hobcroft and it&apos;s FREE!
             </p>
+
             <p>
-              Doors open at 4:00 PM — we close at 9:00 PM.
+              Doors open at 4:00 PM &mdash; we close at 9:00 PM.
             </p>
+
             <div>
               <p className="font-semibold">TOURNAMENT</p>
               <ul className="list-disc pl-5 mt-2 space-y-1">
@@ -68,6 +70,18 @@ export default function EventsPage() {
                 <li>Tournament legal stages only</li>
                 <li>No character bans</li>
                 <li>Traditional tournament rules</li>
+              </ul>
+            </div>
+
+            <div>
+              <p className="font-semibold">SPECIALS</p>
+              <ul className="list-disc pl-5 mt-2 space-y-1">
+                <li>8 wings for $8</li>
+                <li>10&apos; cheese pizza for $8</li>
+                <li>14&apos; cheese pizza for $10</li>
+                <li>Chips and salsa basket (fresh) for $2</li>
+                <li>Mozzarella sticks 6 for $6</li>
+                <li>Happy Hour for drinks 4-7!</li>
               </ul>
             </div>
           </div>
