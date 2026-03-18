@@ -24,14 +24,14 @@ export default function Footer() {
                 </div>
               </div>
 
-              {/* Holiday Hours - St. Patrick's Day */}
+              {/* Holiday Footer - Smash Bros Tournament */}
               <div className="md:border-l md:pl-6 md:border-border">
-                <h3 className="text-sm font-semibold mb-4 text-primary">St. Patrick&apos;s Day Hours &amp; Specials</h3>
+                <h3 className="text-sm font-semibold mb-4 text-primary">Smash Bros Tournament</h3>
                 <div className="text-sm space-y-1">
-                  <p>Tuesday, Mar 17 (St. Patrick&apos;s Day): 4:00 PM - 9:00 PM</p>
+                  <p>Wednesday, Mar 18: 4:30 PM</p>
                   <p>
                     <Link href="/events" className="text-primary underline hover:no-underline">
-                      Admission and food specials all day!
+                      Admission $10! Click for more details.
                     </Link>
                   </p>
                 </div>
