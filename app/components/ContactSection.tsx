@@ -32,7 +32,6 @@ export default function ContactSection() {
     
     try {
       emailjs.init(publicKey);
-      console.log('EmailJS Initialized with public key');
     } catch (error) {
       console.error('EmailJS Init Error:', error);
     }
@@ -95,16 +94,13 @@ export default function ContactSection() {
       phone: formData.phone
     };
     
-    console.log('Sending email with params:', templateParams);
-
     try {
-      const response = await emailjs.send(
+      await emailjs.send(
         serviceId,
         templateId,
         templateParams,
         publicKey
       );
-      console.log('EmailJS Response:', response);
       setFormData({ name: '', email: '', message: '', phone: '' });
       alert('Message sent successfully!');
     } catch (error) {

@@ -4,6 +4,8 @@ import { useEffect } from 'react'
 
 export function BackgroundDebug() {
   useEffect(() => {
+    if (process.env.NODE_ENV !== 'development') return
+
     const checkBackground = () => {
       const body = document.body
       const computedStyle = window.getComputedStyle(body)
