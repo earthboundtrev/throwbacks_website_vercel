@@ -39,7 +39,7 @@ export default function EventsPage() {
       <div className="max-w-2xl mx-auto mb-12">
         <div className="rounded-lg border border-primary/40 bg-primary/5 px-6 py-4 space-y-4">
           <div className="text-center">
-            <p className="font-semibold text-primary">Holiday Event</p>
+            <p className="font-semibold text-primary">Event</p>
             <h2 className="text-2xl font-bold">Music Quiz Night</h2>
           </div>
 
