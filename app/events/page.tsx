@@ -62,17 +62,6 @@ export default function EventsPage() {
             <p>If you want to play arcade games, it&apos;s $10 per person.</p>
             <p>We have food and drink specials available—please ask the bartender.</p>
           </div>
-
-          <div className="pt-1 text-center">
-            <a
-              href="https://www.facebook.com/permalink.php?story_fbid=pfbid037tuAwXBXqXKeuShnYPQdsXYex2aMyTMEdyLU4wqdqnJKYVwCwoddn89DqH21tCEkl&id=61556280427238"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary underline hover:no-underline"
-            >
-              Arcade games are $10/person with food and drink specials available.
-            </a>
-          </div>
         </div>
       </div>
 

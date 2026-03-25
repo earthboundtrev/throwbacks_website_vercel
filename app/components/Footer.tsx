@@ -24,6 +24,19 @@ export default function Footer() {
                 </div>
               </div>
 
+              {/* Holiday Footer - Music Quiz Night */}
+              <div className="md:border-l md:pl-6 md:border-border">
+                <h3 className="text-sm font-semibold mb-4 text-primary">Music Quiz Night</h3>
+                <div className="text-sm space-y-1">
+                  <p>Tonight: Doors open @4 PM</p>
+                  <p>
+                    <Link href="/events" className="text-primary underline hover:no-underline">
+                      More details
+                    </Link>
+                  </p>
+                </div>
+              </div>
+
             </div>
             <p className="text-sm mt-6 hidden md:block">© 2025 Throwbacks Arcade</p>
           </div>
