@@ -24,6 +24,18 @@ export default function Footer() {
                 </div>
               </div>
 
+              {/* Holiday / seasonal callout - Spring Break Events */}
+              <div className="md:border-l md:pl-6 md:border-border">
+                <h3 className="text-sm font-semibold mb-4 text-primary">Spring Break Events</h3>
+                <div className="text-sm space-y-1">
+                  <p>
+                    <Link href="/events" className="text-primary underline hover:no-underline">
+                      Learn more
+                    </Link>
+                  </p>
+                </div>
+              </div>
+
             </div>
             <p className="text-sm mt-6 hidden md:block">© 2025 Throwbacks Arcade</p>
           </div>
