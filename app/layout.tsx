@@ -5,6 +5,7 @@ import { Inter } from "next/font/google"
 import type { Metadata } from "next"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
+import LocationClosingBanner from "./components/LocationClosingBanner"
 import { BackgroundDebug } from './components/BackgroundDebug'
 
 const inter = Inter({ subsets: ["latin"] })
@@ -46,6 +47,7 @@ export default function RootLayout({
       )}>
         <BackgroundDebug />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <LocationClosingBanner />
           <Header />
           <main>{children}</main>
           <Footer />

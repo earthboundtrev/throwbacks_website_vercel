@@ -467,6 +467,12 @@ const pinballGames = [
     year: 2021,
   },
   {
+    name: "Pokemon",
+    image: getImageUrl("pokemon-pinball.jpg"),
+    description: "Pokemon themed pinball machine.",
+    year: null,
+  },
+  {
     name: "Star Wars",
     image: getImageUrl(ImagePaths.STAR_WARS),
     description: "Based on the original Star Wars trilogy.",
