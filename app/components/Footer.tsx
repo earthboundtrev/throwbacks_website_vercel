@@ -22,7 +22,7 @@ export default function Footer() {
                   <p>Saturday: 12:00 PM - 11:00 PM</p>
                   <p>Sunday: 12:00 PM - 7:00 PM</p>
                   <p className="pt-2 font-semibold text-primary">
-                    Last day at this location: Sunday, August 30
+                    Last day at this location: Sunday, August 23, 2026
                   </p>
                   <p className="text-primary">
                     Still booking private &amp; public parties —{" "}
