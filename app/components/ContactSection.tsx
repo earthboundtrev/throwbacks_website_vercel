@@ -1,122 +1,151 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { useState } from "react"
+import Script from "next/script"
+import { usePathname } from "next/navigation"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { MapPin, Phone, Mail } from "lucide-react"
-import emailjs from '@emailjs/browser'
+import {
+  submitContactPayload,
+  validateEmail,
+  validateName,
+  validatePhone,
+} from "@/lib/contact-form-client.js"
 
-export default function ContactSection() {
+declare global {
+  interface Window {
+    grecaptcha?: {
+      getResponse: () => string
+      reset: () => void
+    }
+  }
+}
+
+type ContactSource = "contact" | "party"
+
+type ContactSectionProps = {
+  source?: ContactSource
+}
+
+export default function ContactSection({ source }: ContactSectionProps) {
+  const pathname = usePathname()
+  const resolvedSource: ContactSource =
+    source ?? (pathname === "/party" ? "party" : "contact")
+
+  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
-    phone: ""
+    phone: "",
   })
 
   const [errors, setErrors] = useState({
     name: false,
     email: false,
     message: false,
-    phone: false
+    phone: false,
+    recaptcha: false,
   })
 
-  useEffect(() => {
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-    if (!publicKey) {
-      console.error('EmailJS Public Key is missing!');
-      return;
-    }
-    
-    try {
-      emailjs.init(publicKey);
-    } catch (error) {
-      console.error('EmailJS Init Error:', error);
-    }
-  }, []);
-
-  const isValidPhone = (phone: string) => {
-    const phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-    return phoneRegex.test(phone);
-  };
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [formStatus, setFormStatus] = useState<{
+    type: "success" | "error"
+    message: string
+  } | null>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    
-    if (name === 'phone') {
-      const sanitizedValue = value.replace(/[^\d() -]/g, '');
-      setFormData(prev => ({ ...prev, [name]: sanitizedValue }));
+    const { name, value } = e.target
+
+    if (name === "phone") {
+      const sanitizedValue = value.replace(/[^\d() -]/g, "")
+      setFormData((prev) => ({ ...prev, [name]: sanitizedValue }))
     } else {
-      setFormData(prev => ({ ...prev, [name]: value }));
+      setFormData((prev) => ({ ...prev, [name]: value }))
     }
 
-    setErrors(prev => ({ ...prev, [name]: false }));
+    setErrors((prev) => ({ ...prev, [name]: false }))
+    setFormStatus(null)
+  }
+
+  const getRecaptchaToken = () => {
+    if (typeof window === "undefined" || !window.grecaptcha) return ""
+    return window.grecaptcha.getResponse()
+  }
+
+  const resetRecaptcha = () => {
+    if (typeof window !== "undefined" && window.grecaptcha) {
+      window.grecaptcha.reset()
+    }
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
+    e.preventDefault()
+    setFormStatus(null)
+
+    const recaptchaToken = recaptchaSiteKey ? getRecaptchaToken() : ""
+
     const newErrors = {
-      name: !formData.name.trim(),
-      email: !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email),
+      name: !validateName(formData.name),
+      email: !validateEmail(formData.email),
       message: !formData.message.trim(),
-      phone: !isValidPhone(formData.phone)
-    };
-
-    setErrors(newErrors);
-
-    if (Object.values(newErrors).some(error => error)) {
-      alert('Please fill in all required fields correctly.');
-      return;
+      phone: !validatePhone(formData.phone),
+      recaptcha: Boolean(recaptchaSiteKey && !recaptchaToken),
     }
 
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+    setErrors(newErrors)
 
-    if (!serviceId || !templateId || !publicKey) {
-      console.error('Missing EmailJS configuration:', {
-        serviceId: !!serviceId,
-        templateId: !!templateId,
-        publicKey: !!publicKey
-      });
-      alert('Email configuration error. Please contact the administrator.');
-      return;
+    if (Object.values(newErrors).some(Boolean)) {
+      setFormStatus({
+        type: "error",
+        message: "Please fill in all required fields correctly.",
+      })
+      return
     }
 
-    const templateParams = {
-      to_email: 'ThrowbacksCulpeper@gmail.com',
-      from_name: formData.name,
-      reply_to: formData.email,
-      message: formData.message,
-      phone: formData.phone
-    };
-    
+    setIsSubmitting(true)
+
     try {
-      await emailjs.send(
-        serviceId,
-        templateId,
-        templateParams,
-        publicKey
-      );
-      setFormData({ name: '', email: '', message: '', phone: '' });
-      alert('Message sent successfully!');
+      await submitContactPayload({
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim(),
+        message: formData.message.trim(),
+        recaptchaToken,
+        source: resolvedSource,
+      })
+      setFormData({ name: "", email: "", message: "", phone: "" })
+      setFormStatus({
+        type: "success",
+        message: "Message sent successfully!",
+      })
     } catch (error) {
-      console.error('EmailJS Error Details:', error);
-      alert('Failed to send message. Please try again.');
+      const message =
+        error instanceof Error && error.message
+          ? error.message
+          : "Failed to send message. Please try again."
+      setFormStatus({ type: "error", message })
+    } finally {
+      resetRecaptcha()
+      setIsSubmitting(false)
     }
   }
 
   return (
     <div className="container mx-auto py-16">
+      {recaptchaSiteKey ? (
+        <Script src="https://www.google.com/recaptcha/api.js" async defer />
+      ) : null}
       <h1 className="text-4xl font-bold text-center mb-12 neon-text">Contact Us</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <Card className="bg-card text-card-foreground neon-border pixel-corners">
           <CardHeader>
             <CardTitle className="text-2xl mb-2 text-primary">Get in Touch</CardTitle>
-            <CardDescription className="text-muted-foreground">We'd love to hear from you!</CardDescription>
+            <CardDescription className="text-muted-foreground">We&apos;d love to hear from you!</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit}>
@@ -132,7 +161,7 @@ export default function ContactSection() {
                   onChange={handleChange}
                   required
                   className={`w-full bg-muted text-foreground ${
-                    errors.name ? 'border-red-500' : ''
+                    errors.name ? "border-red-500" : ""
                   }`}
                 />
               </div>
@@ -148,7 +177,7 @@ export default function ContactSection() {
                   onChange={handleChange}
                   required
                   className={`w-full bg-muted text-foreground ${
-                    errors.email ? 'border-red-500' : ''
+                    errors.email ? "border-red-500" : ""
                   }`}
                 />
               </div>
@@ -165,7 +194,7 @@ export default function ContactSection() {
                   placeholder="(123) 456-7890"
                   required
                   className={`w-full bg-muted text-foreground ${
-                    errors.phone ? 'border-red-500' : ''
+                    errors.phone ? "border-red-500" : ""
                   }`}
                 />
                 {errors.phone && (
@@ -185,13 +214,39 @@ export default function ContactSection() {
                   onChange={handleChange}
                   required
                   className={`w-full bg-muted text-foreground ${
-                    errors.message ? 'border-red-500' : ''
+                    errors.message ? "border-red-500" : ""
                   }`}
                   rows={4}
                 />
               </div>
-              <Button type="submit" className="w-full bg-secondary hover:bg-secondary/80 text-white">
-                Send Message
+              {recaptchaSiteKey ? (
+                <div className="mb-4">
+                  <div
+                    className="g-recaptcha flex justify-center"
+                    data-sitekey={recaptchaSiteKey}
+                  />
+                  {errors.recaptcha && (
+                    <p className="mt-2 text-sm text-red-500 text-center">
+                      Please complete the reCAPTCHA verification
+                    </p>
+                  )}
+                </div>
+              ) : null}
+              {formStatus ? (
+                <p
+                  className={`mb-4 text-sm text-center ${
+                    formStatus.type === "success" ? "text-green-500" : "text-red-500"
+                  }`}
+                >
+                  {formStatus.message}
+                </p>
+              ) : null}
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-secondary hover:bg-secondary/80 text-white"
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </CardContent>
@@ -235,4 +290,4 @@ export default function ContactSection() {
       </div>
     </div>
   )
-} 
+}

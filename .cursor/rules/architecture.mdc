@@ -30,7 +30,7 @@ netlify.toml           # Netlify build + redirects
 | Events + Facebook embeds | `app/events/page.tsx` |
 | Games / pinball / redemption lists | `app/games/page.tsx` |
 | Party booking marketing page | `app/party/page.tsx` |
-| Contact forms (EmailJS) | `app/components/ContactSection.tsx`, env via `NEXT_PUBLIC_EMAILJS_*` |
+| Contact forms (Resend API) | `app/components/ContactSection.tsx`, `app/api/contact/route.ts`, `lib/contact-form.js` |
 | Theme + global styles | `app/globals.css`, `components/theme-provider.tsx`, `tailwind.config.ts` |
 
 ## Boundaries
