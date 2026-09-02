@@ -1,0 +1,21 @@
+---
+description: Throwbacks Arcade Architect pre-merge gate — layout, content, merge-ready
+alwaysApply: false
+---
+
+# Throwbacks Arcade Architect
+
+Run as a **separate** `generalPurpose` Task during **ARCHITECT** (never the implementer self-certifying). Prefer **`cursor-grok-4.6-high-fast`** → **`cursor-grok-4.5-high-fast`** → omit `model`. Do **not** use Opus/Sonnet for this gate unless the user explicitly asks. Stay **local** — `.cursor/rules/prefer-local-agents.mdc`. Cost chains: `.cursor/rules/subagent-watchdog.mdc`.
+
+## Check against
+
+- Acceptance criteria fully met; no scope creep
+- `.cursor/rules/site-content.mdc` patterns (hours, banners, events, footer callouts)
+- `.cursor/rules/architecture.mdc` placement (App Router, component locations)
+- `npm run lint` and `npm run build` pass for non-trivial changes
+- No secrets committed; minimal diffs; no accidental `dist/` commits
+
+## Verdict
+
+- **Merge-ready** — list residual risks (if any) that are acceptable
+- **Blockers** — concrete fixes required; pipeline rewinds to **BUGBOT** after implementer fixes

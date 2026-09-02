@@ -1,0 +1,63 @@
+---
+description: Core Throwbacks Arcade marketing-site standards — always apply
+alwaysApply: true
+---
+
+# Throwbacks Arcade Core Rules
+
+## Project identity
+
+- **throwbacks-arcade** — public marketing site for Throwbacks Arcade in Culpeper, VA (Next.js App Router + Netlify).
+- **Repo:** https://github.com/earthboundtrev/throwbacks_website_vercel
+- Do not casually rewrite root `README.md`; put deeper technical notes under `docs/` when needed.
+
+## Scope and quality
+
+- **Minimal diffs** — change only what the task requires; match existing naming and patterns.
+- After UI/routing changes: run `npm run lint` and `npm run build` when the change is non-trivial.
+- **Do not commit `dist/`** or other build artifacts unless the user explicitly asks.
+- **Ticket workflow:** pointer pipeline `IMPLEMENT → BUGBOT → TESTS → ARCHITECT → DEPLOY` until human sign-off — `.cursor/rules/ticket-lifecycle-loop.mdc`. Any code fix rewinds to **BUGBOT**.
+
+## Model strategy (ticket work)
+
+Human approval happens at **issue/PR intent** — not via a pre-code architect gate. Use **different agents/models per role** (`.cursor/rules/ticket-lifecycle-loop.mdc`). **Cost default:** implement on Composer Fast; Bugbot/Architect/security on **Grok 4.6 High** — do **not** omit `model` on checks (costly default) and do **not** burn Opus/Sonnet on routine reviews.
+
+| Phase | Stage | Who / what | Primary → fallback(s) |
+|-------|-------|------------|------------------------|
+| **Implement** | IMPLEMENT | Parent / implement Task | `composer-2.5-fast` → `cursor-grok-4.5-high-fast` |
+| **Bugbot** | BUGBOT | Separate **`bugbot`** Task — never self-review | `cursor-grok-4.6-high-fast` → `cursor-grok-4.5-high-fast` → omit |
+| **Tests** | TESTS | Same session | — |
+| **Architect** | ARCHITECT | Separate Architect Task | `cursor-grok-4.6-high-fast` → `cursor-grok-4.5-high-fast` → omit |
+| **Deploy** | DEPLOY | Default Agent | Composer → Grok / parent |
+
+Outages: `.cursor/rules/subagent-watchdog.mdc`. Prefer local Tasks: `.cursor/rules/prefer-local-agents.mdc`. **New ticket:** `.cursor/rules/github-new-ticket.mdc`.
+
+## Git workflow (GitHub)
+
+**Before writing code** for a GitHub issue or feature branch, sync with `main`.
+
+1. Load issue (`gh issue view {N}`); use `Closes #N` in PR body.
+2. `git fetch origin` → `git checkout main` → `git pull origin main`
+3. Branch: `git checkout -b feature/short-description-{N}` (or `fix/...-{N}`)
+4. Implement on the feature branch — **never commit directly to `main`** unless the user explicitly asks
+5. Pipeline through BUGBOT → TESTS → ARCHITECT before opening/updating the PR
+6. Keep secrets out of git (`.env`, credentials)
+
+## Site content (non-negotiable)
+
+See `.cursor/rules/site-content.mdc`. Short version:
+
+- Store hours and seasonal callouts live in `app/components/Footer.tsx` and `app/components/LocationClosingBanner.tsx`.
+- Featured events / Facebook embeds live on `app/events/page.tsx`.
+- Games lists (arcade, pinball, redemption) live in `app/games/page.tsx`.
+- Remove expired event/holiday content when the user says it no longer applies.
+
+## AI collaboration
+
+- Ticket pipeline: `.cursor/rules/ticket-lifecycle-loop.mdc`
+- New ticket → GitHub issue: `.cursor/rules/github-new-ticket.mdc`
+- Subagent watchdog: `.cursor/rules/subagent-watchdog.mdc`
+- Prefer local agents: `.cursor/rules/prefer-local-agents.mdc`
+- Architect gate: `.cursor/rules/throwbacks-architect.mdc`
+- Site content patterns: `.cursor/rules/site-content.mdc`
+- Architecture: `.cursor/rules/architecture.mdc`

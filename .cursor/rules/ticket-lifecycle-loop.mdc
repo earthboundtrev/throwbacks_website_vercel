@@ -1,0 +1,65 @@
+---
+description: Pointer-based ticket pipeline — implement through ship until human sign-off
+alwaysApply: true
+---
+
+# Ticket pipeline (pointer)
+
+Active **GitHub issue `#N`** and/or **open PR** work follows a **fixed stage order**. Track a **pointer** to the current stage. Advance forward only when that stage passes. **Any code fix rewinds the pointer to `BUGBOT`** (then move forward again).
+
+## Stages (in order)
+
+```
+IMPLEMENT → BUGBOT → TESTS → ARCHITECT → DEPLOY
+```
+
+| Stage | What happens | Advance when |
+|-------|----------------|--------------|
+| **IMPLEMENT** | Ship code/docs for AC, review feedback, or CI fixes | Chunk ready for review → **BUGBOT** |
+| **BUGBOT** | Separate `bugbot` Task (`review-bugbot`) — never self-review as Bugbot | **Clean** on current diff → **TESTS** |
+| **TESTS** | `npm run lint`; `npm run build` for touched routes/components | **Pass** → **ARCHITECT** |
+| **ARCHITECT** | Separate Architect Task — site content, layering, merge-ready (`.cursor/rules/throwbacks-architect.mdc`) | **Merge-ready** → **DEPLOY** |
+| **DEPLOY** | Validate, push, PR with `Closes #N`; watch checks; **after human merge:** verify issue `#N` CLOSED, delete local ticket branch | Human merge/sign-off + **issue closed** + local cleanup → **exit** |
+
+## Separate agents / models (mandatory)
+
+Implementer, Bugbot, and Architect **must not be the same review perspective**.
+
+| Role | How it must run | Primary model | Comparable fallback(s) |
+|------|-----------------|---------------|------------------------|
+| **IMPLEMENT** | Parent and/or implement Task | **`composer-2.5-fast`** | `cursor-grok-4.5-high-fast` → omit / parent |
+| **BUGBOT** | Always a separate **`bugbot`** Task | **`cursor-grok-4.6-high-fast`** | `cursor-grok-4.5-high-fast` → omit |
+| **ARCHITECT** | Always a separate **`generalPurpose`** Task as Throwbacks Architect | **`cursor-grok-4.6-high-fast`** | `cursor-grok-4.5-high-fast` → omit |
+
+**Hard rules**
+
+1. Do **not** skip Bugbot or Architect by self-certifying (except watchdog soft-fail after comparable chain exhausted — `.cursor/rules/subagent-watchdog.mdc`).
+2. **Implement is cheap:** dedicated implement Tasks use **`composer-2.5-fast`**.
+3. **Checks are Grok 4.6 High:** Bugbot, Architect, and security-review launch with **`model: "cursor-grok-4.6-high-fast"`**. Do **not** omit `model` on those Tasks.
+4. After any code fix, rewind to **BUGBOT** and launch a **fresh** Bugbot on the new diff.
+5. **Stay local by default.** `.cursor/rules/prefer-local-agents.mdc`.
+
+## Rewind rules (mandatory)
+
+| Situation | Pointer moves to |
+|-----------|------------------|
+| Bugbot reports findings | Stay **BUGBOT** — fix, re-run until clean |
+| Tests fail or test-driven code changes | **BUGBOT** |
+| Architect reports blockers | **BUGBOT** — fix → Bugbot → Tests → Architect |
+| PR/CI/human review needs code changes | **IMPLEMENT** — then **BUGBOT** |
+
+## Exit (human sign-off + issue closed)
+
+1. Human approves merge or sign-off.
+2. Verify GitHub issue `#N` is **CLOSED** (`gh issue view {N}`).
+3. Delete local feature/remediation branch; `git fetch --prune`.
+
+## Session resume
+
+1. Sync git + read issue/PR (`gh issue view` / `gh pr view`).
+2. If branch diff changed since last clean Bugbot → pointer **BUGBOT**.
+3. Report: `Pipeline pointer: <STAGE>`.
+
+## Response format (active ticket)
+
+**Pipeline:** `IMPLEMENT` | `BUGBOT` | `TESTS` | `ARCHITECT` | `DEPLOY` — Bugbot / tests / architect / deploy / **issue open|closed** / **next stage**.

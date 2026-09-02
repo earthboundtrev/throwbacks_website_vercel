@@ -1,0 +1,38 @@
+---
+description: Site content patterns — hours, banners, events, games listings
+globs: "{app/components/Footer.tsx,app/components/LocationClosingBanner.tsx,app/events/page.tsx,app/games/page.tsx}"
+alwaysApply: false
+---
+
+# Site content patterns
+
+## Hours and location notices
+
+| Surface | File | Notes |
+|---------|------|-------|
+| Store hours | `app/components/Footer.tsx` | Regular weekly hours; optional seasonal callout column |
+| Site-wide closing / promo banner | `app/components/LocationClosingBanner.tsx` | Rendered in `app/layout.tsx` above Header |
+| Party booking CTA | Banner + footer links to `/party` when requested |
+
+Use consistent date formatting: **Sunday, August 23, 2026** or **4:00 PM - 9:00 PM** (match existing footer style).
+
+## Events
+
+- Featured event cards and Facebook embeds: `app/events/page.tsx`
+- Remove expired events when dates pass; keep intro + social links + `ContactSection` as baseline
+- Convert Facebook iframe HTML to valid JSX (`frameBorder`, `allowFullScreen`, `style` object)
+
+## Games
+
+- Arcade, pinball, and redemption lists: `app/games/page.tsx`
+- Pinball entries are name-only in the list UI; add to `pinballGames` array and sort alphabetically
+- Images use CDN via `getImageUrl()` and `ImagePaths` — follow existing entries
+
+## Footer seasonal callouts
+
+Reuse the bordered column pattern next to Store Hours (`md:border-l md:pl-6 md:border-border`):
+- Title in `text-primary`
+- Optional date/time line
+- Link to `/events` or `/party` with `Link` from `next/link`
+
+Remove callouts when the user says the event is over.

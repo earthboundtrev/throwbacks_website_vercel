@@ -1,0 +1,42 @@
+---
+description: Throwbacks Arcade site layout — where routes, components, and styles belong
+globs: "{app/**,components/**,lib/**,public/**,docs/**}"
+alwaysApply: false
+---
+
+# Architecture
+
+## Layout
+
+```
+app/                   # App Router routes, layouts, page-specific UI
+app/components/        # Arcade-specific sections (Header, Footer, Hero, …)
+app/*/page.tsx         # Route pages (events, games, party, menu, …)
+components/            # Shared shadcn-style UI primitives
+lib/                   # Utilities (cn, helpers)
+public/                # Static assets
+docs/                  # Product specs and internal notes
+netlify.toml           # Netlify build + redirects
+```
+
+## Placement
+
+| Concern | Location |
+|---------|----------|
+| Global shell (header, footer, banners) | `app/layout.tsx`, `app/components/Header.tsx`, `Footer.tsx`, `LocationClosingBanner.tsx` |
+| Home page sections | `app/page.tsx`, `app/components/HeroSection.tsx`, `*Section.tsx` |
+| Store hours / seasonal footer callouts | `app/components/Footer.tsx` |
+| Location closing / promo banner | `app/components/LocationClosingBanner.tsx` |
+| Events + Facebook embeds | `app/events/page.tsx` |
+| Games / pinball / redemption lists | `app/games/page.tsx` |
+| Party booking marketing page | `app/party/page.tsx` |
+| Contact forms (EmailJS) | `app/components/ContactSection.tsx`, env via `NEXT_PUBLIC_EMAILJS_*` |
+| Theme + global styles | `app/globals.css`, `components/theme-provider.tsx`, `tailwind.config.ts` |
+
+## Boundaries
+
+- Prefer existing Tailwind + shadcn patterns; match neon/primary styling already in use.
+- Keep `"use client"` only where needed (hooks, browser APIs, embeds).
+- Image CDN URLs for game art are centralized in `app/games/page.tsx` — follow that pattern when adding listings.
+- Do not add frameworks or heavy abstractions without an explicit decision.
+- Party **booking system** is spec-only (`docs/party-booking-requirements.md`) — do not imply live booking unless implemented.
