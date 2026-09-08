@@ -77,7 +77,11 @@ export default function PartyPage() {
 
         {/* Contact Section */}
         <section className="text-center space-y-6">
-          <h2 className="text-2xl neon-text-orange">Ready to Book Your Party?</h2>
+          <h2 className="text-2xl neon-text-orange">Party Bookings</h2>
+          <p className="text-lg max-w-2xl mx-auto">
+            We are not taking bookings for parties right now while we prepare for our move.
+            Please check back after we are settled in our new location.
+          </p>
           <ContactSection />
         </section>
       </div>

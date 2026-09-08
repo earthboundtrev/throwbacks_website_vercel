@@ -260,9 +260,17 @@ export default function ContactSection({ source }: ContactSectionProps) {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              <div className="flex items-center">
-                <MapPin className="h-5 w-5 mr-2 text-secondary" />
-                <p className="text-muted-foreground">201 S. East St, Culpeper, VA, 22701</p>
+              <div className="flex items-start">
+                <MapPin className="h-5 w-5 mr-2 mt-0.5 text-secondary shrink-0" />
+                <div className="text-muted-foreground space-y-1">
+                  <p className="font-medium text-foreground">
+                    Moving soon to: 201 Waters Place, Units 108, 109, and 110, Culpeper, VA 22701
+                  </p>
+                  <p className="text-sm">
+                    We are not at this address yet — it is just a few blocks from our previous
+                    location in Culpeper.
+                  </p>
+                </div>
               </div>
               <div className="flex items-center">
                 <Phone className="h-5 w-5 mr-2 text-secondary" />
@@ -285,6 +293,9 @@ export default function ContactSection({ source }: ContactSectionProps) {
                 className="rounded-lg"
               ></iframe>
             </div>
+            <p className="mt-2 text-xs text-muted-foreground text-center">
+              Map shows our previous address (201 S. East St, Culpeper, VA 22701).
+            </p>
           </CardContent>
         </Card>
       </div>

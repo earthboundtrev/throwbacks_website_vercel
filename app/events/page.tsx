@@ -36,6 +36,24 @@ export default function EventsPage() {
         {" "}accounts for the latest arcade happenings!
       </p>
 
+      <div className="max-w-2xl mx-auto mb-12">
+        <div className="rounded-lg border border-primary/40 bg-primary/5 px-6 py-4 text-center space-y-4">
+          <p className="font-semibold text-primary">Location update</p>
+          <div className="flex justify-center overflow-x-auto">
+            <iframe
+              src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02r9ZTTEXN29DKw9DZtRYJxiSnTTfjGGAyNHGxf5vQqNnmGJEaS6HScaygzhY7ngxfl%26id%3D61556280427238&show_text=true&width=500"
+              width="500"
+              height="488"
+              style={{ border: "none", overflow: "hidden" }}
+              scrolling="no"
+              frameBorder="0"
+              allowFullScreen={true}
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            />
+          </div>
+        </div>
+      </div>
+
       <ContactSection />
     </div>
   )
