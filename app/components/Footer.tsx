@@ -15,12 +15,15 @@ export default function Footer() {
               <div>
                 <h3 className="text-sm font-semibold mb-4">Store Hours</h3>
                 <div className="text-sm space-y-1">
+                  <p className="font-semibold text-primary">Temporarily closed</p>
+                  {/* Regular hours — restore when reopening:
                   <p>Monday - Tuesday: Closed</p>
                   <p>Wednesday: 4:00 PM - 9:00 PM</p>
                   <p>Thursday: 4:00 PM - 9:00 PM</p>
                   <p>Friday: 4:00 PM - 11:00 PM</p>
                   <p>Saturday: 12:00 PM - 11:00 PM</p>
                   <p>Sunday: 12:00 PM - 7:00 PM</p>
+                  */}
                   <p className="pt-2 font-semibold text-primary">
                     We&apos;ve found a new place — expecting to move in about two months
                   </p>
